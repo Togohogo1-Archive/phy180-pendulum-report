@@ -1,0 +1,28 @@
+# Fdb version 3
+["xdvipdfmx"] 1663792251 "out/lab.xdv" "out/lab.pdf" "out/lab" 1663792252
+  "out/lab.xdv" 1663792250 2176 1ec1166529fbbfcf0ce78a943e0decb0 "xelatex"
+  (generated)
+  "out/lab.pdf"
+["xelatex"] 1663792248 "c:/Users/kevin/Documents/GitHub/Togohogo1-Archive/phy180-pendulum-report/report/lab.tex" "out/lab.xdv" "lab" 1663792252
+  "c:/Users/kevin/Documents/GitHub/Togohogo1-Archive/phy180-pendulum-report/report/lab.tex" 1663792244 253 8ae4fb3177975bfcbe8043a656e8c63f ""
+  "c:/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1647157498 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "c:/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1647156573 1524 4414a8315f39513458b80dfc63bff03a ""
+  "c:/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1647156573 1288 655e228510b4c2a1abe905c368440826 ""
+  "c:/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1647156573 1124 6c73e740cf17375f03eec0ee63599741 ""
+  "c:/texlive/2021/texmf-dist/tex/generic/iftex/iftex.sty" 1647175445 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
+  "c:/texlive/2021/texmf-dist/tex/generic/iftex/ifvtex.sty" 1647175445 1057 525c2192b5febbd8c1f662c9468335bb ""
+  "c:/texlive/2021/texmf-dist/tex/latex/base/article.cls" 1647175784 20144 8a7de377ae7a11ee924a7499611f5a9d ""
+  "c:/texlive/2021/texmf-dist/tex/latex/base/size12.clo" 1647175784 8449 bc7344e882df4d7e51c046514dee83e4 ""
+  "c:/texlive/2021/texmf-dist/tex/latex/base/ts1cmr.fd" 1647175784 2430 06a89bcded389391906798ea7a3f3aaa ""
+  "c:/texlive/2021/texmf-dist/tex/latex/geometry/geometry.sty" 1647157612 41601 9cf6c5257b1bc7af01a58859749dd37a ""
+  "c:/texlive/2021/texmf-dist/tex/latex/graphics/keyval.sty" 1647157722 2671 4de6781a30211fe0ea4c672e4a2a8166 ""
+  "c:/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-xetex.def" 1647175747 37342 b51153c40d53583f92f15327233c15d1 ""
+  "c:/texlive/2021/texmf-dist/web2c/texmf.cnf" 1647155721 40042 fe981136cbb5f3715ab1b0e46e3d3892 ""
+  "c:/texlive/2021/texmf-var/web2c/xetex/xelatex.fmt" 1647179058 5132485 aa258d5dea1338dafc881d431a7eb4ad ""
+  "c:/texlive/2021/texmf.cnf" 1647178927 713 e69b156964470283e0530f5060668171 ""
+  "lab.tex" 1663792244 253 8ae4fb3177975bfcbe8043a656e8c63f ""
+  "out/lab.aux" 1663792250 230 4e20214efabce24d0dc5d1af835da206 "xelatex"
+  (generated)
+  "out/lab.aux"
+  "out/lab.log"
+  "out/lab.xdv"
