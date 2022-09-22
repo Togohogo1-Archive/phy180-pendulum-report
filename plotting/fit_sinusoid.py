@@ -22,7 +22,7 @@ function).
 If you want to change the file name, that's the next line below this comment.
 """
 
-filename="mydata.txt"
+filename="damped_sinusoid.txt"
 """
 Change this if your filename is different.
 
@@ -49,8 +49,8 @@ def linear(t, m, b):
 def quadratic(t, a, b, c):
     return a*t*2 + b*t + c
 
-def powerseries(rad, T0, B, C):
-    return T0 * (1 + B*rad + C*rad**2)
+def powerlaw(t, a, b):
+    return a*t**b
 """
 The above five functions should be all you need for PHY180
 The first line in main() is where you choose which function you want to use
@@ -82,7 +82,7 @@ def main():
 
 ########### HERE!!! ##############
 
-    init_guess = (0.55, 100.0, 1.667, 0.0)
+    init_guess = (1.362249378, 100, 1.67, 0.0)
     # Your initial guess of (a, tau, T, phi)
     # For sinusoidal functions, guessing T correctly is critically important
     # Note: your initial guess must have the same number of parameters as
