@@ -22,7 +22,7 @@ function).
 If you want to change the file name, that's the next line below this comment.
 """
 
-filename="damped_sinusoid.txt"
+filename="angle_vs_time.txt"
 """
 Change this if your filename is different.
 
@@ -144,7 +144,7 @@ def main():
     print("tau:", tau, "+/-", u_tau)
     print("T:", T, "+/-", u_T)
     print("phi:", phi, "+/-", u_phi)
-    print("Q value:", np.pi*tau/T)
+    print("Q factor:", np.pi*tau/T)
     # prints the various values with uncertainties
     # This is printed to your screen, not on the graph.
     # If you want to print it on the graph, use plt.text(), details at
