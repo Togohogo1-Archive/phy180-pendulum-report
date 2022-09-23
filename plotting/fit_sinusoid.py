@@ -129,9 +129,9 @@ def main():
     # Prints a box using what's in the "label" strings in the previous two lines.
     # loc specifies the location
 
-    ax1.set_xlabel("xdata")
-    ax1.set_ylabel("ydata")
-    ax1.set_title("Best fit of some data points")
+    ax1.set_xlabel("Time /s")
+    ax1.set_ylabel("Angle /rad")
+    ax1.set_title("Pendulum angle (length 53.7 cm ± 0.1 cm) plotted against time")
     # Here is where you change how your graph is labelled.
 
     #ax1.set_xscale('log')
@@ -144,6 +144,7 @@ def main():
     print("tau:", tau, "+/-", u_tau)
     print("T:", T, "+/-", u_T)
     print("phi:", phi, "+/-", u_phi)
+    print("Q value:", np.pi*tau/T)
     # prints the various values with uncertainties
     # This is printed to your screen, not on the graph.
     # If you want to print it on the graph, use plt.text(), details at
@@ -156,8 +157,8 @@ def main():
     ax2.axhline(y=0, color="black")
     # Plot the y=0 line for context.
 
-    ax2.set_xlabel("xdata")
-    ax2.set_ylabel("ydata")
+    ax2.set_xlabel("Time /s")
+    ax2.set_ylabel("Difference between measured and fitted period /s", wrap=True)
     ax2.set_title("Residuals of the fit")
     # Here is where you change how your graph is labelled.
 
