@@ -22,7 +22,7 @@ function).
 If you want to change the file name, that's the next line below this comment.
 """
 
-filename="angle_vs_time.txt"
+filename="max_amplitude_vs_time.txt"
 """
 Change this if your filename is different.
 
