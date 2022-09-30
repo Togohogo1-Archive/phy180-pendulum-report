@@ -61,7 +61,7 @@ highlighted by comments that look like:
 """
 
 def main():
-    my_func = damped_sinusoid
+    my_func = exponential
     # Change to whichever of the 5 functions you want to fit
 
     plt.rcParams.update({'font.size': 14})
@@ -82,7 +82,7 @@ def main():
 
 ########### HERE!!! ##############
 
-    init_guess = (1.362249378, 100, 1.67, 0.0)
+    init_guess = (1.295034305, 50)
     # Your initial guess of (a, tau, T, phi)
     # For sinusoidal functions, guessing T correctly is critically important
     # Note: your initial guess must have the same number of parameters as
@@ -95,13 +95,13 @@ def main():
 
     a=popt[0]
     tau=popt[1]
-    T=popt[2]
-    phi=popt[3]
+    # T=popt[2]
+    # phi=popt[3]
     # best fit values are named nicely
     u_a=pcov[0,0]**(0.5)
     u_tau=pcov[1,1]**(0.5)
-    u_T=pcov[2,2]**(0.5)
-    u_phi=pcov[3,3]**(0.5)
+    # u_T=pcov[2,2]**(0.5)
+    # u_phi=pcov[3,3]**(0.5)
     # uncertainties of fit are named nicely
 
     start = min(xdata)
@@ -142,9 +142,9 @@ def main():
 
     print("A:", a, "+/-", u_a)
     print("tau:", tau, "+/-", u_tau)
-    print("T:", T, "+/-", u_T)
-    print("phi:", phi, "+/-", u_phi)
-    print("Q factor:", np.pi*tau/T)
+    # print("T:", T, "+/-", u_T)
+    # print("phi:", phi, "+/-", u_phi)
+    # print("Q factor:", np.pi*tau/T)
     # prints the various values with uncertainties
     # This is printed to your screen, not on the graph.
     # If you want to print it on the graph, use plt.text(), details at
