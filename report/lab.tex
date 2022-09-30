@@ -1,8 +1,12 @@
 \documentclass[12pt]{article}
 
+\usepackage[]{biblatex}
 \usepackage[margin=1in]{geometry}
+\usepackage[]{hyperref}
 
-\title{Pendulum Lab Report}
+\addbibresource{references.bib}
+
+\title{Pendulum Lab Report 1}
 \author{Kevin (Zerui) Wang}
 \date{\today}
 
@@ -14,19 +18,46 @@
 
 \pagenumbering{arabic}
 
-\section*{Introduction and Objectives}
+\section{Introduction}
 The first part of this lab report focuses on the relationship the period and release angle of a simple pendulum. After results were collected and analyzed, an improved version of the pendulum was created to collect angular data in order to determine the Q factor.
+
+\section*{Background} \label{Background}
+- period vs releae angle for basic pendulum would be linear, i.e. period should not depend on release angle \\
+- when does the $2\pi\sqrt{\frac{L}{g}}$ fail to hold? \\
+- introduce small angle approximation, find somewhere that mentions what degrees small angle approximation holds \\
+-
+
+
+\section{Period and Release Angle}
+
+
+
+\subsection{Experimental Setup}
+\subsection{Data}
+\subsection{Analysis}
+- Provide a clear conclusion about whether your pendulum's period depends on ampli- tude. If you do find some dependence, you should clearly indicate what range (if any) of amplitudes are `small enough' that the value of C can be ignored. Be clear as to what criteria you used to make a `small enough' judgment. \ref*{Background}
+
+\section{Finding the Q Factor}
+- [objective] fix for asymmetry
+
+\subsection{Experimental Setup}
+\subsection{Data}
+\subsection{Comparing Q Factors}
+\subsection{Analysis}
+- this is gonna be an exponential fit because the overall residuals are smaller than when the fit is linear [include a figure containing both]
+- Describe how you took this data (specifically including the impact of the Q factor on your choices)
+
+\section{Notes}
 
 
 \begin{itemize}
-    \item period is dependent on angle
+    \item period is dependent on angle \cite*{what-is-yeast}
     \item If you find that the period does depend on the angle, and you find that your Q factor is not huge (in the 1000s), then you will need to be careful about how you measure the period. (i.e. conclusions of Q factor based on angle?)
     \item compare the ``3'' ways of calculating the Q factor
 \end{itemize}
 
-\section*{Background}
 
-\section*{Procedure}
+\textbf{Procedure}\\
 for version 2 of the pendulum, I got rid of a swinging motion by attaching 2 strings
 
 asymmetry can be tested by taking residuals?
@@ -36,6 +67,12 @@ talk about uncertainties (make a section for it?)
 \begin{equation}
     \theta(t) = 0.86 e^{-\tau/30} \cos\left(2 \pi \frac{t}{1.43} - 0.08\right)
 \end{equation}
+
 \section*{Conclusion}
+\nocite{*}
+
+\newpage
+
+\printbibliography
 
 \end{document}
