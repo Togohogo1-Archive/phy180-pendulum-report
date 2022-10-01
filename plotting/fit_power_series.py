@@ -22,7 +22,7 @@ function).
 If you want to change the file name, that's the next line below this comment.
 """
 
-filename="newdata.txt"
+filename="period_vs_release_angle.txt"
 """
 Change this if your filename is different.
 
