@@ -1,7 +1,14 @@
-100 for q value is optimal for this experiment
+- convert degrees to radians in next report
 
-Your graph from the first check in (improved perhaps) with the quadratic fit (if you didn't already include that).
+- angle time graph -
 
-Either the sinusoidal theta(t) graph or just the amplitude(t) graph. Either one will show whether your pendulum is decaying exponentially or linearly (or something else, but that would surprise me).
+- release angle from 30 degrees?
+- tracker uncertainty
+- power series b value using that to determine if it is symmetrical?
 
-multiple trilas when determining tau and Q factor = do not need
+If you get 0.003±0.001, it is somewhere between 0.002 and 0.004, which does not contain zero and you can't say it's symmetrical;
+If you get 0.001±0.003, it is somewhere between -0.002 and 0.004, which contains zero and you can say it's symmetrical.
+
+have actual values of B, C in a table
+
+or actually (ask ta mable) - what does symmetrical even mean
