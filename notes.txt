@@ -12,3 +12,10 @@ If you get 0.001±0.003, it is somewhere between -0.002 and 0.004, which contain
 have actual values of B, C in a table
 
 or actually (ask ta mable) - what does symmetrical even mean
+reference more graphs in the future
+
+You can't prove the sinusoidal decay is exponential (in fact it is technically not). Here you are just using it as an acceptable model as follows:
+
+At first glance, the angle vs time data appears to follow an exponential damped sinusoidal curve. So to verify this you fit a exponentially damped sinusoidal function to angle vs time data. It turns out the fit is decent (residuals lie within/around error sizes). Hence you claim that exponential decay is a good model for the pendulum's amplitude, and extract the decay factor  from the curve fit to describe the rate of decay.
+
+wtf does a larger uncertainty for q value entail?

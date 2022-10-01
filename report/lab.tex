@@ -37,13 +37,13 @@ This is otherwise known as the small angle approximation of a pendulum, which on
 \end{equation}
 which must be solved numerically where the solution to Equation \ref{eq:eq2} diverges from simple harmonic motion that could accurately predict the motion of a pendulum under small angle approximation \cite{the-simple-pendulum}. It may also be useful to note that the $m$ term does not come up in any of these equations, which implies pendulum period does not depend on mass.
 
-Additionally the existence of air resistance and friction within the string fibres will cause a dampening effect on the oscillation of a pendulum. This effect can be modeled given an initial angle $\theta_0$ in radians, decay constant $\tau$, a pendulum period $T$, and a angular phase shift $\phi$ \cite{damped-oscillations}:
-\begin{equation}
+Additionally the existence of air resistance and friction within the string fibres will cause a dampening effect on the oscillation of a pendulum. This effect can be modeled given an initial angle $\theta_0$ in radians, decay constant $\tau$, a pendulum period $T$, and a angular phase shift $\phi_0$ \cite{damped-oscillations}:
+\begin{equation} \label{eq:eq3}
     \theta(t) = \theta_0 e^{-{t/\tau}} \cos\left(2\pi\frac{t}{T} + \phi_0\right)
 \end{equation}
 
 In order to quantify the dampening effect of a pendulum, its Q factor may be used, defined as follows for a damped oscillator \cite{pnp-physics}:
-\begin{equation}
+\begin{equation} \label{eq:eq4}
     Q = \pi\frac{\tau}{T}
 \end{equation}
 Another way of measuring the Q factor is counting the number of oscillation it takes for the amplitude to decay to $e^{-\pi} \approx 4\%$, or measuring $Q/n$ where the amplitude decays to $e^{-{\pi/n}}$ its original.
@@ -90,7 +90,7 @@ Lastly, the residuals shown on the graph do not suggest much asymmetry regarding
 \section{Finding the Q Factor}
 
 \subsection{Experimental Setup}
-In order to correct for potential asymmetry and elliptical orbit, a degree of freedom was removed from the pendulum by threading a string through the stainless steel quick link and fastening the 2 strings in 2 locations to form the shape of a ``V''. Then pendulum would then swing back and forth in the plane perpendicular to the ``V'', and the tendency for each string to balance out the load prevents it from swinging in any other direction. Below is a setup of what was described above:
+In order to correct for potential asymmetry and elliptical orbit, a degree of freedom was removed from the pendulum by threading a string through the stainless steel quick link and fastening the 2 strings in 2 locations to form the shape of a ``V''. Then pendulum would then swing back and forth in the plane perpendicular to the ``V'', and the tendency for each string to balance out the load prevents it from swinging in any other direction. Additionally, the pendulum was kept the same length as the previous setup (perpendicular distance from threading location to top of desk), and extra precautions were taken to make sure the pendulum was symmetrical along the vertical axis. Below is a setup of what was described above:
 \begin{figure}[!hptb]
     \centering
     \includegraphics[width=0.5\textwidth]{../figures/exp_setup2.jpg}
@@ -115,31 +115,16 @@ A protractor was not included in the experimental setup this time because Tracke
 The uncertainty for time was taken to be $1/f$ where $f$ represents the frame rate of the video imported into Tracker, namely $120\,\text{fps}$. The uncertainty for angle was calculated this time for each individual maximum by taking half the range of the sweeping area that the string made in Tracker due to video blur.
 
 \subsection{Analysis}
-- this is gonna be an exponential fit because the overall residuals are smaller than when the fit is linear [include a figure containing both]
-- Describe how you took this data (specifically including the impact of the Q factor on your choices)
-
-\section{Notes}
-
-
-\begin{itemize}
-    \item period is dependent on angle \cite*{what-is-yeast}
-    \item If you find that the period does depend on the angle, and you find that your Q factor is not huge (in the 1000s), then you will need to be careful about how you measure the period. (i.e. conclusions of Q factor based on angle?)
-    \item compare the ``3'' ways of calculating the Q factor
-\end{itemize}
-
-
-\textbf{Procedure}\\
-for version 2 of the pendulum, I got rid of a swinging motion by attaching 2 strings
-
-asymmetry can be tested by taking residuals?
-
-talk about uncertainties (make a section for it?)
-
+The exponential fit used to create a curve of best fit for the data was taken from Equation \ref{eq:eq3}, removing the periodic motion portion. The equation for the fit is equal to:
 \begin{equation}
-    \theta(t) = 0.86 e^{-{\tau/30}} \cos\left(2 \pi \frac{t}{1.43} - 0.08\right)
+    1.21e^{-{t}/68}
 \end{equation}
 
-\section*{Conclusion}
+With this information and also knowing the period ($1.67\,\text{s}$) of the pendulum when the release angle is $1.2064\,\text{rad}$, the $Q$ factor can be calculated. The uncertainty of the $Q$ factor is taken to be the largest percent uncertainty of $\tau$ and $T$.
+
+$\tau$ was calculated to have an uncertainty of 1, which is less than the percent uncertainty of $T$, taken to be $0.3/1.67 \approx 15\%$. Thus, the value of $Q$ can be calculated to be $130 \pm 20$.
+
+However, Graph \ref{fig:figure 4} can also be used to find the Q factor by counting the number of oscillations. Since the total amplitude does not decrease down to $e^-\pi \%$ of the original amplitude, it suffices to calculate a value for $Q/5$. The closes data points above and below $\theta_0e^{-{pi/5}}$ correspond to the $24^\text{th}$ and $25^\text{th}$ swing. Multiplying these values by 5 and taking half the difference (range) to be the uncertainty gives another Q factor of $123 \pm 2$.
 
 \newpage
 
