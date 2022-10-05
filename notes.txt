@@ -19,3 +19,7 @@ You can't prove the sinusoidal decay is exponential (in fact it is technically n
 At first glance, the angle vs time data appears to follow an exponential damped sinusoidal curve. So to verify this you fit a exponentially damped sinusoidal function to angle vs time data. It turns out the fit is decent (residuals lie within/around error sizes). Hence you claim that exponential decay is a good model for the pendulum's amplitude, and extract the decay factor  from the curve fit to describe the rate of decay.
 
 wtf does a larger uncertainty for q value entail?
+
+does pendulum length need to be the same for lab 1 and lab 2?
+
+how to Uncertainty for Q value when counting
