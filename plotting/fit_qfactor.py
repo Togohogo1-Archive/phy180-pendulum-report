@@ -22,7 +22,7 @@ function).
 If you want to change the file name, that's the next line below this comment.
 """
 
-filename="qfactor_txt_files\\len10.txt"
+filename="qfactor_vs_length.txt"
 """
 Change this if your filename is different.
 
@@ -32,6 +32,7 @@ you need to use double slashes (in Windows) to get this to work. For example
 filename="C:\\Users\\Brian\\PHY224\\mydata.txt"
 """
 
+from re import I
 import scipy.optimize as optimize
 import numpy as np
 import matplotlib.pyplot as plt
@@ -47,10 +48,13 @@ def linear(t, m, b):
     return m*t+b
 
 def quadratic(t, a, b, c):
-    return a*t*2 + b*t + c
+    return a*t**2 + b*t + c
 
 def powerlaw(t, a, b):
     return a*t**b
+
+def powerseries(rad, T0, B, C):
+    return T0 * (1 + B*rad + C*rad**2)
 """
 The above five functions should be all you need for PHY180
 The first line in main() is where you choose which function you want to use
@@ -60,11 +64,8 @@ highlighted by comments that look like:
 ########### HERE!!! ##############
 """
 
-T = 1.5142
-
-
 def main():
-    my_func = exponential
+    my_func = quadratic
     # Change to whichever of the 5 functions you want to fit
 
     plt.rcParams.update({'font.size': 14})
@@ -84,7 +85,17 @@ def main():
     # Finished importing data, naming it sensibly.
 
 ########### HERE!!! ##############
-    init_guess = (0.398109777, 50)
+
+    '''
+    Notes:
+    def damped_sinusoid(t, a, tau, T, phi):
+    def quadratic(t, a, b, c): -> rad, a, b, c
+    Initial guess of a, b, c
+    def powerseries(rad, T0, B, C):
+    '''
+    init_guess = (-0.5, 30, -50)
+
+    # init_guess = (0.55, 100.0, 1.667, 0.0)
     # Your initial guess of (a, tau, T, phi)
     # For sinusoidal functions, guessing T correctly is critically important
     # Note: your initial guess must have the same number of parameters as
@@ -95,14 +106,14 @@ def main():
 
 ########### HERE!!! ##############
 
-    a=popt[0]
-    tau=popt[1]
-    # T=popt[2]
+    A=popt[0]
+    B=popt[1]
+    C=popt[2]
     # phi=popt[3]
     # best fit values are named nicely
-    u_a=pcov[0,0]**(0.5)
-    u_tau=pcov[1,1]**(0.5)
-    # u_T=pcov[2,2]**(0.5)
+    u_T0=pcov[0,0]**(0.5)
+    u_B=pcov[1,1]**(0.5)
+    u_C=pcov[2,2]**(0.5)
     # u_phi=pcov[3,3]**(0.5)
     # uncertainties of fit are named nicely
 
@@ -131,9 +142,9 @@ def main():
     # Prints a box using what's in the "label" strings in the previous two lines.
     # loc specifies the location
 
-    ax1.set_xlabel("Time /s")
-    ax1.set_ylabel("Angle /rad")
-    ax1.set_title("Pendulum angle (length 53.7 cm ± 0.1 cm) plotted against time")
+    ax1.set_xlabel("Length /cm")
+    ax1.set_ylabel("Q")
+    ax1.set_title("Q factor of pendulum plotted against length")
     # Here is where you change how your graph is labelled.
 
     #ax1.set_xscale('log')
@@ -142,16 +153,10 @@ def main():
 
 ########### HERE!!! ##############
 
-    print("A:", a, "+/-", u_a)
-    print("tau:", tau, "+/-", u_tau)
-    per_u_a = u_a/a
-    per_u_tau = u_tau/tau
-    Q = np.pi*tau/T
-    print("Q factor:", Q, "+/-", max(per_u_a, per_u_tau)*Q)
-
-    # print("T:", T, "+/-", u_T)
+    print("T0:", A, "+/-", u_T0)
+    print("B:", B, "+/-", u_B)
+    print("C:", C, "+/-", u_C)
     # print("phi:", phi, "+/-", u_phi)
-    # print("Q factor:", np.pi*tau/T)
     # prints the various values with uncertainties
     # This is printed to your screen, not on the graph.
     # If you want to print it on the graph, use plt.text(), details at
@@ -164,8 +169,8 @@ def main():
     ax2.axhline(y=0, color="black")
     # Plot the y=0 line for context.
 
-    ax2.set_xlabel("Time /s")
-    ax2.set_ylabel("Difference between measured and fitted angle /s", wrap=True)
+    ax2.set_xlabel("Length /cm")
+    ax2.set_ylabel("Difference between measured and fitted period /s", wrap=True)
     ax2.set_title("Residuals of the fit")
     # Here is where you change how your graph is labelled.
 
