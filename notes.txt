@@ -1,8 +1,9 @@
 ==================================================
 about to retake all data for pendulum lab
 ==================================================
-could have been uneven tension force - 
+could have been uneven tension force -
 if have time for the last report, given the same height, angle of the "v" vs period
+measuring period using tracker is much easier than relying on reaction time and also reduces uncertainty
 
 ==================================================
 Stuff for 2nd check in and maybe other stuff for pendulum lab rewrite
