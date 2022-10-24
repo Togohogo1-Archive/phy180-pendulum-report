@@ -1,4 +1,10 @@
 ==================================================
+about to retake all data for pendulum lab
+==================================================
+could have been uneven tension force - 
+if have time for the last report, given the same height, angle of the "v" vs period
+
+==================================================
 Stuff for 2nd check in and maybe other stuff for pendulum lab rewrite
 ==================================================
 How to we calculate Q factor for 2nd graph

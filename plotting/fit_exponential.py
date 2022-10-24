@@ -22,7 +22,8 @@ function).
 If you want to change the file name, that's the next line below this comment.
 """
 
-filename="qfactor_txt_files\\len10.txt"
+# filename="qfactor_txt_files\\len10.txt"
+filename="max_amplitude_vs_time.txt"
 """
 Change this if your filename is different.
 
@@ -60,7 +61,7 @@ highlighted by comments that look like:
 ########### HERE!!! ##############
 """
 
-T = 1.5142
+T = 0.606
 
 
 def main():
@@ -84,7 +85,7 @@ def main():
     # Finished importing data, naming it sensibly.
 
 ########### HERE!!! ##############
-    init_guess = (0.398109777, 50)
+    init_guess = (0.3587, 70)
     # Your initial guess of (a, tau, T, phi)
     # For sinusoidal functions, guessing T correctly is critically important
     # Note: your initial guess must have the same number of parameters as
