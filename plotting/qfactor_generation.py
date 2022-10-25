@@ -24,14 +24,14 @@ def powerlaw(t, a, b):
     return a*t**b
 
 
-qfactor_txt_idx = 3  # CHANGE REQUIRED
+qfactor_txt_idx = 8  # CHANGE REQUIRED
 init_tau = 70  # CHANGE REQUIRED?
 
 filename=f"qfactor_txt_files\\len{qfactor_txt_idx}.txt"
 # filename="max_amplitude_vs_time.txt"
 
 # Periods array, each index corresponds to txt file
-periods = [-1, 0.686666667, None, 0.92667, None, None, None,None, None, None]
+periods = [-1, 0.686666667, None, 0.92667, None, 1.11333, None, 1.27333, 1.33333, None]
 T = periods[qfactor_txt_idx]
 
 print("Approximate length:", (T/(2*np.pi))**2 * 9.81)
