@@ -135,8 +135,8 @@ def main():
     ax1.set_title("Pendulum period plotted against length")
     # Here is where you change how your graph is labelled.
 
-    ax1.set_xscale('log')
-    ax1.set_yscale('log')
+    # ax1.set_xscale('log')
+    # ax1.set_yscale('log')
     # uncomment out the above two lines if you want to make it log-log scale
 
 ########### HERE!!! ##############
@@ -257,8 +257,8 @@ def main():
     ax1.set_title("Best fit of some data points")
     # Here is where you change how your graph is labelled.
 
-    ax1.set_xscale('log')
-    ax1.set_yscale('log')
+    # ax1.set_xscale('log')
+    # ax1.set_yscale('log')
     # uncomment out the above two lines if you want to make it log-log scale
 
 ########### HERE!!! ##############
