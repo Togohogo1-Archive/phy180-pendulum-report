@@ -23,9 +23,10 @@ def quadratic(t, a, b, c):
 def powerlaw(t, a, b):
     return a*t**b
 
-for i in range(1, 10):
+# for i in range(1, 10):
+for i in range(4, 5):
     qfactor_txt_idx = i  # CHANGE REQUIRED
-    init_tau = 70  # CHANGE REQUIRED?
+    init_tau = 120  # CHANGE REQUIRED?
 
     filename=f"qfactor_txt_files\\len{qfactor_txt_idx}.txt"
     # filename="max_amplitude_vs_time.txt"
