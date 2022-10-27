@@ -1,3 +1,5 @@
+q factor table in appendix bc the uncertainties are small
+
 ==================================================
 about to retake all data for pendulum lab
 ==================================================
