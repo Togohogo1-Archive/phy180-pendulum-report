@@ -23,8 +23,8 @@ def quadratic(t, a, b, c):
 def powerlaw(t, a, b):
     return a*t**b
 
-# for i in range(1, 10):
-for i in range(4, 5):
+for i in range(1, 10):
+# for i in range(4, 5):
     qfactor_txt_idx = i  # CHANGE REQUIRED
     init_tau = 120  # CHANGE REQUIRED?
 
