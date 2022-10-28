@@ -36,6 +36,8 @@ import scipy.optimize as optimize
 import numpy as np
 import matplotlib.pyplot as plt
 from pylab import loadtxt
+from sklearn.metrics import r2_score
+
 
 def damped_sinusoid(t, a, tau, T, phi):
     return a*np.exp(-t/tau)*np.cos(2*np.pi*t/T+phi)
@@ -122,21 +124,23 @@ def main():
     # Plot the data with error bars, fmt makes it data points not a line, label is
     # a string which will be printed in the legend, you should edit this string.
 
-    ax1.plot(xs, curve, label="best fit", color="black")
+    rsq = r2_score(ydata, [powerlaw(i, a, b) for i in xdata])
+
+    ax1.plot(xs, curve, label=f"best fit = $2.00L^{{0.483}}$\n$r^2$ = {rsq:.4f}", color="red")
     # Plot the best fit curve on top of the data points as a line.
     # NOTE: you may want to change the value of label to something better!!
 
-    ax1.legend(loc='upper right')
+    ax1.legend(loc='lower right')
     # Prints a box using what's in the "label" strings in the previous two lines.
     # loc specifies the location
 
-    ax1.set_xlabel("Length /cm")
-    ax1.set_ylabel("Period /s")
-    ax1.set_title("Pendulum period plotted against length")
+    ax1.set_xlabel("log(length) /m")
+    ax1.set_ylabel("log(period) /s")
+    ax1.set_title("Log of pendulum period plotted against log of length")
     # Here is where you change how your graph is labelled.
 
-    # ax1.set_xscale('log')
-    # ax1.set_yscale('log')
+    ax1.set_xscale('log')
+    ax1.set_yscale('log')
     # uncomment out the above two lines if you want to make it log-log scale
 
 ########### HERE!!! ##############
@@ -159,8 +163,8 @@ def main():
     ax2.axhline(y=0, color="black")
     # Plot the y=0 line for context.
 
-    ax2.set_xlabel("Length /cm")
-    ax2.set_ylabel("Difference between measured and fitted angle /s", wrap=True)
+    ax2.set_xlabel("Length /m")
+    ax2.set_ylabel("Measured period minus fitted period /s", wrap=True)
     ax2.set_title("Residuals of the fit")
     # Here is where you change how your graph is labelled.
 
@@ -257,8 +261,8 @@ def main():
     ax1.set_title("Best fit of some data points")
     # Here is where you change how your graph is labelled.
 
-    # ax1.set_xscale('log')
-    # ax1.set_yscale('log')
+    ax1.set_xscale('log')
+    ax1.set_yscale('log')
     # uncomment out the above two lines if you want to make it log-log scale
 
 ########### HERE!!! ##############

@@ -37,6 +37,7 @@ import scipy.optimize as optimize
 import numpy as np
 import matplotlib.pyplot as plt
 from pylab import loadtxt
+from sklearn.metrics import r2_score
 
 def damped_sinusoid(t, a, tau, T, phi):
     return a*np.exp(-t/tau)*np.cos(2*np.pi*t/T+phi)
@@ -61,7 +62,15 @@ highlighted by comments that look like:
 ########### HERE!!! ##############
 """
 
-T = 0.606
+qfactor_txt_idx = 5  # CHANGE REQUIRED
+init_tau = 120  # CHANGE REQUIRED?
+
+filename=f"qfactor_txt_files\\len{qfactor_txt_idx}.txt"
+# filename="max_amplitude_vs_time.txt"
+
+# Periods array, each index corresponds to txt file
+periods = [-1, 0.686666667, 0.84000, 0.92667, 1.00667, 1.11333, 1.19333, 1.27333, 1.33333, 1.40667]
+T = periods[qfactor_txt_idx]
 
 
 def main():
@@ -124,7 +133,9 @@ def main():
     # Plot the data with error bars, fmt makes it data points not a line, label is
     # a string which will be printed in the legend, you should edit this string.
 
-    ax1.plot(xs, curve, label="best fit", color="black")
+    rsq = r2_score(ydata, [exponential(i, a, tau) for i in xdata])
+
+    ax1.plot(xs, curve, label=f"best fit = $0.405e^{{-t/170}}$\n$r^2$ = {rsq:.4f}", color="red")
     # Plot the best fit curve on top of the data points as a line.
     # NOTE: you may want to change the value of label to something better!!
 
@@ -134,7 +145,7 @@ def main():
 
     ax1.set_xlabel("Time /s")
     ax1.set_ylabel("Angle /rad")
-    ax1.set_title("Pendulum angle (length 53.7 cm ± 0.1 cm) plotted against time")
+    ax1.set_title("Pendulum amplitude (length 30.1 cm ± 0.1 cm) plotted against time")
     # Here is where you change how your graph is labelled.
 
     #ax1.set_xscale('log')
@@ -166,7 +177,7 @@ def main():
     # Plot the y=0 line for context.
 
     ax2.set_xlabel("Time /s")
-    ax2.set_ylabel("Difference between measured and fitted angle /s", wrap=True)
+    ax2.set_ylabel("Measured angle minus fitted angle /rad", wrap=True)
     ax2.set_title("Residuals of the fit")
     # Here is where you change how your graph is labelled.
 

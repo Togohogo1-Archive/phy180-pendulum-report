@@ -39,6 +39,7 @@ import matplotlib.pyplot as plt
 from pylab import loadtxt
 from sklearn.metrics import r2_score
 
+
 def damped_sinusoid(t, a, tau, T, phi):
     return a*np.exp(-t/tau)*np.cos(2*np.pi*t/T+phi)
 
@@ -139,7 +140,7 @@ def main():
     # print(ydata)
     rsq = r2_score(ydata, [powerseries(i, T0, B, C) for i in xdata])
 
-    ax1.plot(xs, curve, label=f"best fit = $ 4.40(-0.001\\theta + 0.091\\theta^2)$\n$r^2$ = {rsq:.4f}", color="red")
+    ax1.plot(xs, curve, label=f"best fit = $4.40(1-0.001\\theta + 0.091\\theta^2)$\n$r^2$ = {rsq:.4f}", color="red")
     # Plot the best fit curve on top of the data points as a line.
     # NOTE: you may want to change the value of label to something better!!
 
@@ -152,7 +153,7 @@ def main():
 
     ax1.set_xlabel("Release angle /rad")
     ax1.set_ylabel("Pendulum period /s")
-    ax1.set_title("Pendulum period (length 53.7cm ± 0.1cm) plotted against release angle")
+    ax1.set_title("Pendulum period plotted against release angle")
     # Here is where you change how your graph is labelled.
 
     #ax1.set_xscale('log')
@@ -178,7 +179,7 @@ def main():
     # Plot the y=0 line for context.
 
     ax2.set_xlabel("Release angle /rad")
-    ax2.set_ylabel("Difference between measured and fitted period /s", wrap=True)
+    ax2.set_ylabel("Measured period minus fitted period /s", wrap=True)
     ax2.set_title("Residuals of the fit")
     # Here is where you change how your graph is labelled.
 
