@@ -37,6 +37,8 @@ import scipy.optimize as optimize
 import numpy as np
 import matplotlib.pyplot as plt
 from pylab import loadtxt
+from sklearn.metrics import r2_score
+
 
 def damped_sinusoid(t, a, tau, T, phi):
     return a*np.exp(-t/tau)*np.cos(2*np.pi*t/T+phi)
@@ -55,6 +57,9 @@ def powerlaw(t, a, b):
 
 def powerseries(rad, T0, B, C):
     return T0 * (1 + B*rad + C*rad**2)
+
+def crit_damped(x, a, b, c):
+    return (b*x)*np.exp(-c*(x - a/b))
 """
 The above five functions should be all you need for PHY180
 The first line in main() is where you choose which function you want to use
@@ -65,7 +70,7 @@ highlighted by comments that look like:
 """
 
 def main():
-    my_func = quadratic
+    my_func = crit_damped
     # Change to whichever of the 5 functions you want to fit
 
     plt.rcParams.update({'font.size': 14})
@@ -93,8 +98,8 @@ def main():
     Initial guess of a, b, c
     def powerseries(rad, T0, B, C):
     '''
-    init_guess = (-0.5, 30, -50)
-
+    # init_guess = (-0.5, 30, -50)
+    init_guess = (-100, 78, 0.05)
     # init_guess = (0.55, 100.0, 1.667, 0.0)
     # Your initial guess of (a, tau, T, phi)
     # For sinusoidal functions, guessing T correctly is critically important
@@ -106,14 +111,14 @@ def main():
 
 ########### HERE!!! ##############
 
-    A=popt[0]
-    B=popt[1]
-    C=popt[2]
+    a=popt[0]
+    b=popt[1]
+    c=popt[2]
     # phi=popt[3]
     # best fit values are named nicely
-    u_T0=pcov[0,0]**(0.5)
-    u_B=pcov[1,1]**(0.5)
-    u_C=pcov[2,2]**(0.5)
+    u_a=pcov[0,0]**(0.5)
+    u_b=pcov[1,1]**(0.5)
+    u_c=pcov[2,2]**(0.5)
     # u_phi=pcov[3,3]**(0.5)
     # uncertainties of fit are named nicely
 
@@ -134,16 +139,18 @@ def main():
     # Plot the data with error bars, fmt makes it data points not a line, label is
     # a string which will be printed in the legend, you should edit this string.
 
-    ax1.plot(xs, curve, label="best fit", color="black")
+    rsq = r2_score(ydata, [crit_damped(i, a, b, c) for i in xdata])
+
+    ax1.plot(xs, curve, label=f"best fit = $55xe^{{-0.038x-0.080}}$\n$r^2$ = {rsq:.3f}", color="red")
     # Plot the best fit curve on top of the data points as a line.
     # NOTE: you may want to change the value of label to something better!!
 
-    ax1.legend(loc='upper right')
+    ax1.legend(loc='lower right')
     # Prints a box using what's in the "label" strings in the previous two lines.
     # loc specifies the location
 
     ax1.set_xlabel("Length /cm")
-    ax1.set_ylabel("Q")
+    ax1.set_ylabel("Q factor")
     ax1.set_title("Q factor of pendulum plotted against length")
     # Here is where you change how your graph is labelled.
 
@@ -153,9 +160,9 @@ def main():
 
 ########### HERE!!! ##############
 
-    print("T0:", A, "+/-", u_T0)
-    print("B:", B, "+/-", u_B)
-    print("C:", C, "+/-", u_C)
+    print("a:", a, "+/-", u_a)
+    print("b:", b, "+/-", u_b)
+    print("c:", c, "+/-", u_c)
     # print("phi:", phi, "+/-", u_phi)
     # prints the various values with uncertainties
     # This is printed to your screen, not on the graph.
@@ -170,7 +177,7 @@ def main():
     # Plot the y=0 line for context.
 
     ax2.set_xlabel("Length /cm")
-    ax2.set_ylabel("Difference between measured and fitted period /s", wrap=True)
+    ax2.set_ylabel("Measured Q factor minus fitted Q factor", wrap=True)
     ax2.set_title("Residuals of the fit")
     # Here is where you change how your graph is labelled.
 
