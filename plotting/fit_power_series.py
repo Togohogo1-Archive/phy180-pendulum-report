@@ -37,6 +37,7 @@ import scipy.optimize as optimize
 import numpy as np
 import matplotlib.pyplot as plt
 from pylab import loadtxt
+from sklearn.metrics import r2_score
 
 def damped_sinusoid(t, a, tau, T, phi):
     return a*np.exp(-t/tau)*np.cos(2*np.pi*t/T+phi)
@@ -70,6 +71,7 @@ def main():
 
     plt.rcParams.update({'font.size': 14})
     plt.rcParams['figure.figsize'] = 10, 9
+    # plt.rcParams['text.usetex'] = True
     # Change the fontsize of the graphs to make it easier to read.
     # Also change the picture size, useful for the save-to-file option.
 
@@ -134,9 +136,15 @@ def main():
     # Plot the data with error bars, fmt makes it data points not a line, label is
     # a string which will be printed in the legend, you should edit this string.
 
-    ax1.plot(xs, curve, label="best fit", color="black")
+    # print(ydata)
+    rsq = r2_score(ydata, [powerseries(i, T0, B, C) for i in xdata])
+
+    ax1.plot(xs, curve, label=f"best fit = $ 4.40(-0.001\\theta + 0.091\\theta^2)$\n$r^2$ = {rsq:.4f}", color="red")
     # Plot the best fit curve on top of the data points as a line.
     # NOTE: you may want to change the value of label to something better!!
+
+
+    # return T0 * (1 + B*rad + C*rad**2)
 
     ax1.legend(loc='upper right')
     # Prints a box using what's in the "label" strings in the previous two lines.
@@ -144,7 +152,7 @@ def main():
 
     ax1.set_xlabel("Release angle /rad")
     ax1.set_ylabel("Pendulum period /s")
-    ax1.set_title("Pendulum period (length 53.7 cm ± 0.1 cm) plotted against release angle")
+    ax1.set_title("Pendulum period (length 53.7cm ± 0.1cm) plotted against release angle")
     # Here is where you change how your graph is labelled.
 
     #ax1.set_xscale('log')
