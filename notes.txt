@@ -1,11 +1,15 @@
+mention how i kept the angle constant for q factor
+what should I fit q factor to
 q factor table in appendix bc the uncertainties are small
+C = how much it affects the angle, etc.
 
-==================================================
-about to retake all data for pendulum lab
-==================================================
 could have been uneven tension force -
 if have time for the last report, given the same height, angle of the "v" vs period
 measuring period using tracker is much easier than relying on reaction time and also reduces uncertainty
+
+keeping variables the same = only varying one parameter, make sure that no other factors influence my lab
+
+commend on the small angles
 
 ==================================================
 Stuff for 2nd check in and maybe other stuff for pendulum lab rewrite
@@ -43,6 +47,7 @@ if i have an hold version of determining Q factor (larg angle) and i try again, 
 ==================================================
 Notes for next time
 ==================================================
+
 - convert degrees to radians in next report
 
 - angle time graph -

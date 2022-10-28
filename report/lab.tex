@@ -10,7 +10,7 @@
 
 \addbibresource{references.bib}
 
-\title{Pendulum Lab Report 1}
+\title{Pendulum Lab Report II}
 \author{Kevin (Zerui) Wang}
 \date{\today}
 
@@ -19,36 +19,43 @@
 \pagenumbering{gobble}
 
 \maketitle
+\newpage
 
 \pagenumbering{arabic}
 
 \section{Introduction}
+The purpose of this lab report is to evaluate the accuracy of various theoretical models used to predict the behaviour of a simple pendulum.
+
 The first part of this lab report focuses on the relationship the period and release angle of a simple pendulum. After results were collected and analyzed, an improved version of the pendulum was created to collect angular data in order to determine the Q factor.
 
+Lastly, further analysis was done on the Q factor to try to determine a trend in relation to the pendulum length
+
 \section{Background} \label{Background}
-For a simple pendulum with a mass $m$ hanging from a string with length $L$ experiencing a downwards force due to gravity $g$, the period, for a release angle $\theta$, is given by the following equation \cite{the-simple-pendulum}:
-\begin{equation} \label{eq:eq1}
-    2\pi \sqrt{\frac{L}{g}}
+A simple pendulum can be defined as a weight suspended below a pivot point to which it swings back and forth freely along a plane that contains the pivot point via a flexible string. The length of the pendulum is defined as the distance from the pivot to the center of mass of the weight hanging from the pendulum. Usually, the weight of the string is negligible in comparison to the pendulum mass. For a simple pendulum of length $L$ experiencing a downwards force due to gravity $g$, the period $T$, for a release angle $\theta$, is given by the following equation \cite{the-simple-pendulum}:
+\begin{equation} \label{eq:l-over-g}
+    T = 2\pi \sqrt{\frac{L}{g}}
 \end{equation}
 
-This is otherwise known as the small angle approximation of a pendulum, which only holds if $\theta \lesssim 20^{\circ}$ \cite{the-simple-pendulum} (This phenomena may be observed if one were to release the pendulum from a large $\theta$). For $\theta \gtrsim 20^{\circ}$, a new model must be created to take into account the realistic behaviour of a pendulum, namely a second order differential equation with respect to $\theta$:
-\begin{equation} \label{eq:eq2}
+Note that Equation \ref{eq:l-over-g} does not depend on $\theta$ because it represents the behaviour of an ideal pendulum. More realistically, the behavior of a pendulum assuming no energy loss due to friction can be modelled with a second order differential equation of $\theta$ with respect to $t$:
+\begin{equation} \label{eq:diffeq-pendulum}
     \frac{d^2\theta}{dt^2} + \frac{g}{L}\sin{\theta} = 0
 \end{equation}
-which must be solved numerically where the solution to Equation \ref{eq:eq2} diverges from simple harmonic motion that could accurately predict the motion of a pendulum under small angle approximation \cite{the-simple-pendulum}. It may also be useful to note that the $m$ term does not come up in any of these equations, which implies pendulum period does not depend on mass.
+which cannot be solved in terms of elementary functions [ref required]. However, if small angle approximation is assumed, that is, $\sin\theta \approx \theta$, the differential equation can be rewritten and solved to yield $\theta(t)$ in terms of a sine wave with period of Equation \ref{eq:l-over-g}. For $\theta \lesssim 20^{\circ}$, small angle approximation (and therefore simple harmonic motion) holds \cite{the-simple-pendulum}. Additionally, the the mass of the pendulum weight does not show up in any of the equations, implying that pendulum period does not depend on mass for the previous models.
 
-Additionally the existence of air resistance and friction within the string fibres will cause a dampening effect on the oscillation of a pendulum. This effect can be modeled given an initial angle $\theta_0$ in radians, decay constant $\tau$, a pendulum period $T$, and a angular phase shift $\phi_0$ \cite{damped-oscillations}:
+Another way to model a pendulum realistically is to incorporate dampening from air resistance and friction within the string fibres, given by the following equation:
 \begin{equation} \label{eq:eq3}
     \theta(t) = \theta_0 e^{-{t/\tau}} \cos\left(2\pi\frac{t}{T} + \phi_0\right)
 \end{equation}
+where $\theta_0$ is the initial release angle in radians, $T$ is the pendulum's period, $\phi_0$ is the angular phase shift, and $\tau$ is the decay constant that governs all factors that results in the damped harmonic motion. However, it can be inferred from this model that $T$ is constant, implying the presence of small angle approximation.
 
-In order to quantify the dampening effect of a pendulum, its Q factor may be used, defined as follows for a damped oscillator \cite{pnp-physics}:
+In order to quantify the dampening effect of a pendulum, its Q factor, which measures how damped the oscillator is, may be used. The Q factor for a damped oscillator is defined as follows. \cite{pnp-physics}:
 \begin{equation} \label{eq:eq4}
     Q = \pi\frac{\tau}{T}
 \end{equation}
-Another way of measuring the Q factor is counting the number of oscillation it takes for the amplitude to decay to $e^{-\pi} \approx 4\%$, or measuring $Q/n$ where the amplitude decays to $e^{-{\pi/n}}$ its original.
 
-This way of determining the Q factor works because when $Q = n\pi\frac{\tau}{T}$, $t = \frac{QT}{n}$. The amplitude would them be $e^{-{t/T}} = e^{-{\pi/n}}$
+The Q factor also represents the the number of oscillations for the pendulum's amplitude to decay to $e^{-\pi}$, or $\approx 4\%$ of its original amplitude. However, it suffices to calculate $Q/n$ where the amplitude decays to $e^{-\pi/n}i\%$ of its original.
+
+Qualitatively, when the Q factor is large, the pendulum comes to rest slower. When the Q factor is large, the pendulum comes to rest slower.
 
 \section{Period and Release Angle}
 
