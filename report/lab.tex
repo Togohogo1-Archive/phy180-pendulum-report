@@ -16,12 +16,13 @@
 \author{Kevin (Zerui) Wang}
 \date{\today}
 
+
 \begin{document}
 
 \pagenumbering{gobble}
-
 \maketitle
 \newpage
+
 
 \pagenumbering{arabic}
 
@@ -68,7 +69,7 @@ The Q factor also represents the the number of oscillations for the pendulum's a
 \section{Period and Release Angle}
 
 \subsection{Experimental Setup}
-The initial setup for the pendulum was made by first attaching a protractor on a desk. The pendulum, made by tying a piece of cotton string around a stainless steel quick link {\color{blue} that was aligned to match the $90^{\circ}$ mark on the pendulum. Extra tape was also used to reinforce the pivot point, which was made to be collinear to the $0^{\circ}$ and $180^{\circ}$ markings.} The length of the pendulum was measured using measuring tape. An image of the experimental setup is shown below:
+The initial setup for the pendulum was made by first attaching a protractor on a desk. The pendulum, made by tying a piece of cotton string around a stainless steel quick link {\color{blue} that was aligned to match the $90^{\circ}$ mark on the pendulum. Extra tape was also used to reinforce the pivot point, which was made to be collinear to the $0^{\circ}$ and $180^{\circ}$ markings.} An image of the experimental setup is shown below:
 
 \begin{figure}[!hptb]
     \centering
@@ -190,15 +191,18 @@ When the amplitude $A(t)$ decays to $e^{-\pi}\,\%$ of its original amplitude, th
 \section{Period and Length} \label{Period and Length}
 
 \subsection{Experimental Setup}
-A third version of the pendulum was made to collect data for 9 different lengths ranging from around $10\,$cm to $50\,$cm, as shown below:
+The same pendulum in Figure \ref{fig:figure 3} was used to collect data for 9 different lengths ranging from around $10\,$cm to $50\,$cm.
 
+The angle formed by the ``V'' shape was kept to be around $60^\circ$ for all lengths, which is important in making sure that any dependent variable under investigation will only depend on one independent variable, the length of the pendulum.
 
-angle formed by the ``V'' shape was kept to be around $60^\circ$ for all lengths recorded. The last point is especially important so that any dependent variable under investigation can only depend on one independent variable, the length of the pendulum.
+The length of the pendulum was measured by taking the distance from the pivot point to the center of mass of the weight, approximated to be located at the center of the stainless steel quick link. This value was taken to be the average of the distance from the pivot point to the top of the weight and the distance from the pivot point to the bottom of the weight.
 
-Lastly, all angles were released from approximately $20^\circ$ to satisfy small angle approximation.
+For all lenghts, angles were released from approximately $20^\circ$ to satisfy the behaviour of a simple pendulum.
+
+\newpage
 
 \subsection{Data}
-Plotting period against length reveals a trend that looks like a square root function. Theoretically, this should be the case as shown by Equation \ref{eq:l-over-g}:
+Plotting period against length reveals a square root-like trend, which is reminiscent of Equation \ref{eq:l-over-g}. Plotting the line of best fit gives:
 
 \begin{figure}[!hptb]
     \centering
@@ -207,22 +211,23 @@ Plotting period against length reveals a trend that looks like a square root fun
     \label{fig:figure 6}
 \end{figure}
 
-this goes into analysus - a linear log-log plot of figure x can be shown to reinforce the idea that Equation x holds. I.e.
-
-given the equation x, taking log on both sides results in <> and then the slope of the linear plot would be equal to n
-
-The uncertainty for length was taken to be half of the smallest increment of a tape measure, multiplied by 2 since a double ended measurement was used. The uncertainty for period was taken to be 1/30, or how long a frame lasts
-
-
+The uncertainty for length (0.1\,cm) was taken to be twice the smallest increment of a tape measure since a double-ended measurement was used to determine pendulum length. As in previous sections, the uncertainty for a period was taken to be 1/30\,s.
 
 \subsection{Analysis}
-Equation \ref{eq:l-over-g} can also be represented in the form of
-\begin{equation}
-    T = AL^{n}
-\end{equation}
-where $A = 2\pi/\sqrt{g}$ and $n = 0.5$.
+Equation \ref{eq:l-over-g} can also be represented in the form of $T = AL^n$ where $A = 2\pi/\sqrt{g} \approx 2$ and $n = 0.5$. This equation is displayed as the line of best fit in Figure \ref{fig:figure 6}, which also determines the uncertainty of $A = 0.01$ and $n = 0.004$.
 
-From Figure \ref{fig:figure 6}, the uncertainty of $A = 0.01$ and $n = 0.004$, meaning that the experimentally determined value of A fits within the range of $2\pi/\sqrt{g}$ but B. However, the $r^2$ value for this fit, combined with low residuals implies that for small angles, the relationship between period and length is governed by Equation \ref{eq:l-over-g}.
+The $r^2$ value for this fit, combined with consistent and low residuals implies that for small angles, the relationship between period and length is governed by Equation \ref{eq:l-over-g}.
+
+To further prove that the line of best fit represents a square root function, Figure \ref{fig:figure 6} may be replotted with a log-log graph, shown below:
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{../figures/period_vs_length_log.png}
+    \caption[]{Figure \ref{fig:figure 6} plotted with a log-log graph}
+    \label{fig:figure 7}
+\end{figure}
+
+Given Equation \ref{eq:l-over-g}, taking log on both sides results in an equation in the form of $y = mx + b$ where the slope of the line $m$ equals to the power $n$. Plotting on a logarithmic axis provides a useful way to analyze functions that obey a power law, where the adjusted line of best fit should look linear, as expected in Figure \ref{fig:figure 7} reinforcing the idea that Equation \ref{eq:l-over-g} is an accurate way of representing the relationship between pendulum period and length.
 
 \section{Q Factor and Length}
 
@@ -264,6 +269,8 @@ amplitude time graph also holds for small angles
 the small angles stuff can be concluded based on the period vs release angle graph
 
 q factor graph nobody knows what it is, I came up with a plausible function based off of intuition
+
+how cool it is when so much anaysis can be done on one of the most simple mechanisms in physics
 
 }
 
