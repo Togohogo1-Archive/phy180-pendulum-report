@@ -132,6 +132,9 @@ In order to correct for potential asymmetry and elliptical orbit, a degree of fr
 \newpage
 
 \subsection{Data}
+{\color{blue}
+is still referring to old lab data
+}
 Due to the double-string contraption, the camera must be positioned in a place where the chance of capturing both strings in the same frame is minimized.
 
 A protractor was not included in the experimental setup this time because Tracker \cite{tracker} was used to measure the angles. First, data was collected such that the maximum amplitude of the pendulum could be plotted against time:
@@ -193,9 +196,29 @@ A third version of the pendulum was made to collect data for 9 different lengths
 
 The setup used here doesn't deviate much from the one used in Section \ref{Finding the Q Factor}, other than the fact that a real protractor was used in place of Tracker's virtual one, lego was used to prevent the potential risk of the string slipping under the tape and the angle formed by the "V" shape was kept to be around $60^\circ$ for all lengths recorded. The last point is especially important so that any dependent variable under investigation can only depend on one independent variable, the length of the pendulum.
 
+Lastly, all angles were released from approximately $20^\circ$ to satisfy small angle approximation.
+
 \subsection{Data}
+Plotting period against length reveals a trend that looks like a square root function. Theoretically, this should be the case as shown by Equation \ref{eq:l-over-g}:
+
+\begin{figure}[!hptb]
+    \centering
+    \includegraphics[width=\textwidth]{../figures/period_vs_length.png}
+    \caption{Graph of pendulum period plotted against pendulum length}
+    \label{fig:figure 6}
+\end{figure}
+
+The uncertainty for length was taken to be half of the smallest increment of a tape measure, multiplied by 2 since a double ended measurement was used.
+
 
 \subsection{Analysis}
+Equation \ref{eq:l-over-g} can also be represented in the form of
+\begin{equation}
+    T = AL^{n}
+\end{equation}
+where $A = 2\pi/\sqrt{g}$ and $n = 0.5$.
+
+From Figure \ref{fig:figure 6}, the uncertainty of $A = 0.01$ and $n = 0.004$, meaning that the experimentally determined value of A fits within the range of $2\pi/\sqrt{g}$ but B. However, the $r^2$ value for this fit, combined with low residuals implies that for small angles, the relationship between period and length is governed by Equation \ref{eq:l-over-g}.
 
 \section{Q Factor and Length}
 The same setup from Section \ref{Period and Length} was used to calculate the Q factors.
