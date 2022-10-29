@@ -83,7 +83,7 @@ for i in range(1, 10):
         per_u_a = u_a/a
         per_u_tau = u_tau/tau
         Q = np.pi*tau/T
-        print("Q factor:", Q, "+/-", max(per_u_a, per_u_tau)*Q)
+        print("Q factor:", Q, "+/-", max(1/30, per_u_tau)*Q)
         print()
 
         residual = ydata - my_func(xdata, *popt)

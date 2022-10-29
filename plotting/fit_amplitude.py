@@ -159,7 +159,7 @@ def main():
     per_u_a = u_a/a
     per_u_tau = u_tau/tau
     Q = np.pi*tau/T
-    print("Q factor:", Q, "+/-", max(per_u_a, per_u_tau)*Q)
+    print("Q factor:", Q, "+/-", max(1/30, per_u_tau)*Q)
 
     # print("T:", T, "+/-", u_T)
     # print("phi:", phi, "+/-", u_phi)

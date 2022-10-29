@@ -142,7 +142,7 @@ def main():
 
     rsq = r2_score(ydata, [crit_damped(i, a, b) for i in xdata])
 
-    ax1.plot(xs, curve, label=f"best fit = $50xe^{{-0.038x}}$\n$r^2$ = {rsq:.3f}", color="red")
+    ax1.plot(xs, curve, label=f"best fit = $49xe^{{-0.037x}}$\n$r^2$ = {rsq:.3f}", color="red")
     # Plot the best fit curve on top of the data points as a line.
     # NOTE: you may want to change the value of label to something better!!
 
