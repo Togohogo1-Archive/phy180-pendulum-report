@@ -96,7 +96,7 @@ According to Section \ref{Background}, {\color{blue} if $|\theta| \lesssim 20^{\
 \begin{equation} \label{eq:power series}
     T_0(1 + B\theta_0 + C\theta_0^2)
 \end{equation}
-where $T_0$ represents the period, $\theta_0$ the release angle and $B$ and $C$ some arbitrary constants. {\color{blue}Since the $r^2$ value is relatively close to 1, the residuals are small, and the graph passes through all error bars, this fit would be a valid representation of the trend. Additionally, the uncertainty for $T_0 = 0.03$, $B = 0.005$ and $C = 0.007$, calculated through fitting the trendline with a Python program.
+where $T_0$ represents the period, $\theta_0$ the release angle and $B$ and $C$ some arbitrary constants. {\color{blue}Since the $r^2$ value is relatively close to 1, the residuals are both small and consistent, and the graph passes through all error bars, this fit would be a valid representation of the trend. Additionally, the uncertainty for $T_0 = 0.03$, $B = 0.005$ and $C = 0.007$, calculated through fitting the trendline with a Python program.
 
 The terms $B$ and $C$ are also significant because they describe the symmetry of parabola and how much it deviates from the trend described in Equation \ref{eq:l-over-g}. If $B$ does not equal 0, the parabola will not be centered at $\theta = 0$. Since the experimentally determined value of B is smaller than its uncertainty, it suffices to say that $B = 0$, which implies symmetry in the graph. On the other hand, if $C = 0$, then the line of best fit will have slope 0. However, this was determined experimentally to not be the case.
 
@@ -155,42 +155,23 @@ The uncertainty for each angle was measured in Tracker \cite{tracker} at the fra
     \caption{\centering Angle determination in Tracker. The red and blue diamonds represents the upper and lower bound of the angle, represented in xy coordinates relative to the pink axes, which can be converted to angles.}
     \label{fig:figure5}
 \end{figure}
-}
 
-The uncertainty for time was taken to be 1/30 where 30 represents the frame rate (fps) of the video.
+By using Tracker, the uncertainty for period can be decreased from 0.25\,s to 0.03\,s, which equals to the frame rate. This is because Tracker allows the frame-by-frame playback and pausing of a video, especially at a maximum amplitude. Period itself is measured by converting the number of frames taken for 5 swings into seconds, and dividing that number by 5.
+
+{}
+
+Lastly, the uncertainty for time was taken to be {\color{blue}1/30} where {\color{blue}30} represents the frame rate (fps) of the video.
+
 
 \subsection{Analysis}
 {\color{blue}
-The best fit equation in Figure \ref{fig:figure 4} is modelled by Equation \ref{eq:amplitude-function}. The uncertainty for $\theta_0 = 0.004$ and $\tau = 2$. Given Equation \ref{eq:q-factor-formula}, $T = 1.11 \pm 0.03$ for this pendulum length and $\tau = 170$, the Q factor is calculated to be $480 \pm 5$ taking on the higher percent uncertainty of $T$ and $\tau$.
+The best fit equation in Figure \ref{fig:figure 4} is modelled by Equation \ref{eq:amplitude-function}. The uncertainty for $\theta_0 = 0.004$ and $\tau = 2$. Simply observing the graph reveals a plausible for the the data. This is reinforced by the high $r^2$ value and small and consistent residuals.
 
-A
+Given Equation \ref{eq:q-factor-formula}, $T = 1.11 \pm 0.03$ for this pendulum length and $\tau = 170$, the Q factor is calculated to be $480 \pm 5$, taking on the higher percent uncertainty of $T$ and $\tau$.
+Another way of determining the Q factor is by counting the number of oscillations as outlined in Section \ref{Background}. However, this method of determining the Q factor is suboptimal due to the nature of the exponential decay function.
 
+When the amplitude $A(t)$ decays to $e^{-\pi}\,\%$ of its original amplitude, the rate at which $A(t)$ changes decreases significantly. Given the value of amplitude $A_Q$ that corresponds to the time $t_Q$ when $A(t_Q) = e^{-\pi}\theta_0$, a large range of Q factors will satisfy a region of $A(t)$ around $t_Q$ bounded by the uncertainty values of $A_Q$. Additionally, the exact value of $e^{-\pi}\theta_0$ may  not correspond to any of the amplitudes but rather some angle in between two peaks.
 }
-
-
-{\color{blue}
-
-
-- alos mention that when the amplitude decays to some value, the actual new amplitude may not correspond to a peak, but some angle of pendulum swing in between the peak
-
-
-- when the penulum decays to a certain amplitude that corresponds to some q/n, nez, it corresponds to a time in the graph
-
-- due to the nature of the exponential decay function,
-
-}
-
-
-The exponential fit used to create a curve of best fit for the data was taken from Equation \ref{eq:damped-harmonic-oscillator}, removing the periodic motion portion. The equation for the fit is equal to:
-\begin{equation}
-    1.21e^{-{t}/68}
-\end{equation}
-
-With this information and also knowing the period ($1.67\,\text{s}$) of the pendulum when the release angle is $1.2064\,\text{rad}$, the $Q$ factor can be calculated. The uncertainty of the $Q$ factor is taken to be the largest percent uncertainty of $\tau$ and $T$.
-
-$\tau$ was calculated to have an uncertainty of 1, which is less than the percent uncertainty of $T$, taken to be $0.3/1.67 \approx 15\%$. Thus, the value of $Q$ can be calculated to be $130 \pm 20$.
-
-However, Graph \ref{fig:figure 4} can also be used to find the Q factor by counting the number of oscillations. Since the total amplitude does not decrease down to $e^-\pi \%$ of the original amplitude, it suffices to calculate a value for $Q/5$. The closes data points above and below $\theta_0e^{-{pi/5}}$ correspond to the $24^\text{th}$ and $25^\text{th}$ swing. Multiplying these values by 5 and taking half the difference (range) to be the uncertainty gives another Q factor of $123 \pm 2$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -232,7 +213,6 @@ given the equation x, taking log on both sides results in <> and then the slope 
 
 The uncertainty for length was taken to be half of the smallest increment of a tape measure, multiplied by 2 since a double ended measurement was used. The uncertainty for period was taken to be 1/30, or how long a frame lasts
 
-- talk about how I calculated uncertainty for the frame -> instead of using reaction time, I can loop the video by frames, as if it is frozen and then the uncertainty would decrease. the number of frames was recorded for 5 peak to peaks, and then converted into time and divided by 5
 
 
 \subsection{Analysis}
