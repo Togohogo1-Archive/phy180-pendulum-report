@@ -111,14 +111,21 @@ This, it can be concluded that the pendulum period depends on amplitude.}
 
 \subsection{Experimental Setup}
 {\color{blue}
-A single-stringed pendulum tends to spin in an elliptical fashion when released. Not only does this violate the way a pendulum was defined in Section \ref{Background}, elliptical orbits may also lead to inaccurate measurements. To correct for this,} a degree of freedom was removed from the pendulum by threading a string through the stainless steel quick link and fastening the 2 strings in 2 locations to form the shape of a ``V''. Then pendulum would then swing back and forth in the plane perpendicular to the ``V'', and the tendency for each string to balance out the load prevents it from swinging in any other direction. Additionally, the pendulum was kept the same length as the previous setup (perpendicular distance from threading location to top of desk), and extra precautions were taken to make sure the pendulum was symmetrical along the vertical axis. Below is a setup of what was described above:
+A single-stringed pendulum tends to spin in an elliptical fashion when released. Not only does this violate the way a pendulum was defined in Section \ref{Background}, elliptical orbits may also lead to inaccurate measurements. To correct for this,} a degree of freedom was removed from the pendulum by threading a string through the stainless steel quick link and fastening the 2 strings in 2 locations to form the shape of a ``V''. The pendulum would then swing back and forth in the plane perpendicular to the ``V'' {\color{blue} where the pivot lies directly above the string. Lego pieces were used to prevent the risk of the string slipping under the tape and a protractor was taped directly above the weight. Extra caution was taken to ensure that the center of the protractor aligned with the 2 intersection points between the string and the legos. Shown below is a side and front view of the new setup:}
 \begin{figure}[!hptb]
     \centering
-    \includegraphics[width=0.5\textwidth]{../figures/exp_setup2.jpg}
-    \caption{\centering Improved version of the pendulum used to determine Q factor}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figures/exp_setup3_angle.png}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figures/exp_setup3_front.png}
+    \end{subfigure}
+    \caption{\centering Improved version of the pendulum used to determine Q factor. Note: this is actually version 3 of the pendulum. Issues that arose with version 2 will be discussed later in this section.}
     \label{fig:figure 3}
 \end{figure}
-
 \newpage
 
 \subsection{Data}
@@ -137,9 +144,13 @@ is still referring to old lab data
 
 also mention the 20 second increments that were used because the full video was recorded (this was mentioned in section 6 or smth, move that here)
 
+- how I used tracker to determine a maximum and minimum angle
+
 
 
 }
+
+
 Due to the double-string contraption, the camera must be positioned in a place where the chance of capturing both strings in the same frame is minimized.
 
 A protractor was not included in the experimental setup this time because Tracker \cite{tracker} was used to measure the angles. First, data was collected such that the maximum amplitude of the pendulum could be plotted against time:
@@ -200,22 +211,8 @@ However, Graph \ref{fig:figure 4} can also be used to find the Q factor by count
 \subsection{Experimental Setup}
 A third version of the pendulum was made to collect data for 9 different lengths ranging from around $10\,$cm to $50\,$cm, as shown below:
 
-\begin{figure}[!hptb]
-    \centering
-    \begin{subfigure}{0.49\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/exp_setup3_angle.png}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.49\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/exp_setup3_front.png}
-    \end{subfigure}
-    \caption{Side and front view of version 3 of the pendulum}
-    \label{fig:figure 5}
-\end{figure}
 
-The setup used here doesn't deviate much from the one used in Section \ref{Finding the Q Factor}, other than the fact that a real protractor was used in place of Tracker's virtual one, lego was used to prevent the potential risk of the string slipping under the tape and the angle formed by the ``V'' shape was kept to be around $60^\circ$ for all lengths recorded. The last point is especially important so that any dependent variable under investigation can only depend on one independent variable, the length of the pendulum.
+angle formed by the ``V'' shape was kept to be around $60^\circ$ for all lengths recorded. The last point is especially important so that any dependent variable under investigation can only depend on one independent variable, the length of the pendulum.
 
 Lastly, all angles were released from approximately $20^\circ$ to satisfy small angle approximation.
 

@@ -58,8 +58,8 @@ def powerlaw(t, a, b):
 def powerseries(rad, T0, B, C):
     return T0 * (1 + B*rad + C*rad**2)
 
-def crit_damped(x, a, b, c):
-    return (b*x)*np.exp(-c*(x - a/b))
+def crit_damped(x, a, b):
+    return (a*x)*np.exp(-b*(x))
 """
 The above five functions should be all you need for PHY180
 The first line in main() is where you choose which function you want to use
@@ -99,7 +99,8 @@ def main():
     def powerseries(rad, T0, B, C):
     '''
     # init_guess = (-0.5, 30, -50)
-    init_guess = (-100, 78, 0.05)
+    init_guess = (-100, 78)
+    init_guess = (20.2, 0.2)
     # init_guess = (0.55, 100.0, 1.667, 0.0)
     # Your initial guess of (a, tau, T, phi)
     # For sinusoidal functions, guessing T correctly is critically important
@@ -113,12 +114,12 @@ def main():
 
     a=popt[0]
     b=popt[1]
-    c=popt[2]
+    # c=popt[2]
     # phi=popt[3]
     # best fit values are named nicely
     u_a=pcov[0,0]**(0.5)
     u_b=pcov[1,1]**(0.5)
-    u_c=pcov[2,2]**(0.5)
+    # u_c=pcov[2,2]**(0.5)
     # u_phi=pcov[3,3]**(0.5)
     # uncertainties of fit are named nicely
 
@@ -139,9 +140,9 @@ def main():
     # Plot the data with error bars, fmt makes it data points not a line, label is
     # a string which will be printed in the legend, you should edit this string.
 
-    rsq = r2_score(ydata, [crit_damped(i, a, b, c) for i in xdata])
+    rsq = r2_score(ydata, [crit_damped(i, a, b) for i in xdata])
 
-    ax1.plot(xs, curve, label=f"best fit = $55xe^{{-0.038x-0.080}}$\n$r^2$ = {rsq:.3f}", color="red")
+    ax1.plot(xs, curve, label=f"best fit = $50xe^{{-0.038x}}$\n$r^2$ = {rsq:.3f}", color="red")
     # Plot the best fit curve on top of the data points as a line.
     # NOTE: you may want to change the value of label to something better!!
 
@@ -162,7 +163,7 @@ def main():
 
     print("a:", a, "+/-", u_a)
     print("b:", b, "+/-", u_b)
-    print("c:", c, "+/-", u_c)
+    # print("c:", c, "+/-", u_c)
     # print("phi:", phi, "+/-", u_phi)
     # prints the various values with uncertainties
     # This is printed to your screen, not on the graph.
