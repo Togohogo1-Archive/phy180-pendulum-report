@@ -50,18 +50,13 @@ Notes for next time
 
 - convert degrees to radians in next report
 
-- angle time graph -
-
-- release angle from 30 degrees?
 - tracker uncertainty
 - power series b value using that to determine if it is symmetrical?
 
 If you get 0.003±0.001, it is somewhere between 0.002 and 0.004, which does not contain zero and you can't say it's symmetrical;
 If you get 0.001±0.003, it is somewhere between -0.002 and 0.004, which contains zero and you can say it's symmetrical.
 
-have actual values of B, C in a table
 
-or actually (ask ta mable) - what does symmetrical even mean
 reference more graphs in the future
 
 You can't prove the sinusoidal decay is exponential (in fact it is technically not). Here you are just using it as an acceptable model as follows:
@@ -70,6 +65,5 @@ At first glance, the angle vs time data appears to follow an exponential damped 
 
 wtf does a larger uncertainty for q value entail?
 
-does pendulum length need to be the same for lab 1 and lab 2?
 
 how to Uncertainty for Q value when counting

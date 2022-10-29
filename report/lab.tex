@@ -31,39 +31,42 @@ The first part of this lab report focuses on the relationship the period and rel
 {\color{blue}Lastly, further analysis was done on the Q factor to try to determine a trend in relation to the pendulum length}
 
 \section{Background} \label{Background}
-{\color{blue}A simple pendulum can be defined as a weight suspended below a pivot point to which it swings back and forth freely along a plane that contains the pivot point via a flexible string. The length of the pendulum is defined as the distance from the pivot to the center of mass of the weight hanging from the pendulum. Usually, the weight of the string is negligible in comparison to the pendulum mass.} For a simple pendulum of length $L$ experiencing a downwards force due to gravity $g$, the period $T$, for a release angle $\theta$, is given by the following equation \cite{damped-oscillations}:
+{\color{blue}A simple pendulum can be defined as a weight suspended below a pivot point to which it swings back and forth freely along a plane that contains the pivot point via a flexible string. The length of the pendulum is defined as the distance from the pivot to the center of mass of the weight hanging from the pendulum. Usually, the weight of the string is negligible in comparison to the pendulum mass.} For a simple pendulum of length $L$ experiencing a downwards force due to gravity $g$, the period $T$, for a release angle $\theta$, is given by the following equation \cite{the-simple-pendulum}:
 \begin{equation} \label{eq:l-over-g}
     T = 2\pi \sqrt{\frac{L}{g}}
 \end{equation}
 
-Note that Equation \ref{eq:l-over-g} does not depend on $\theta$ because it represents the behaviour of an ideal pendulum. More realistically, the behavior of a pendulum assuming no energy loss due to friction can be modelled with a second order differential equation of $\theta$ with respect to $t$:
+{\color{blue}Note that Equation \ref{eq:l-over-g} does not depend on $\theta$ because it represents the behaviour of an ideal pendulum.} More realistically, the behavior of a pendulum assuming no energy loss due to friction can be modelled with a second order differential equation of $\theta$ with respect to $t$:
 \begin{equation} \label{eq:diffeq-pendulum}
     \frac{d^2\theta}{dt^2} + \frac{g}{L}\sin{\theta} = 0
 \end{equation}
-which cannot be solved in terms of elementary functions [ref required]. However, if small angle approximation is assumed, that is, $\sin\theta \approx \theta$, the differential equation can be rewritten and solved to yield $\theta(t)$ in terms of a sine wave with period of Equation \ref{eq:l-over-g}. For $\theta \lesssim 20^{\circ}$, small angle approximation (and therefore simple harmonic motion) holds \cite{the-simple-pendulum}. Additionally, the the mass of the pendulum weight does not show up in any of the equations, implying that pendulum period does not depend on mass for the previous models.
+{\color{blue}which cannot be solved in terms of elementary functions \cite{no-elementary-fns}. However, if small angle approximation is assumed, where $\sin\theta \approx \theta$, the differential equation can be rewritten and solved to yield $\theta(t)$ in terms of a sine wave with period of Equation \ref{eq:l-over-g}. For $|\theta| \lesssim 20^{\circ}$, small angle approximation (and therefore simple harmonic motion) holds \cite{the-simple-pendulum}.} Additionally, the the mass of the pendulum weight does not show up in any of the equations, implying that pendulum period does not depend on mass for the previous models.
 
-Another way to model a pendulum realistically is to incorporate dampening from air resistance and friction within the string fibres, given by the following equation:
+Another way to model a pendulum realistically is to incorporate dampening from air resistance and friction within the string fibres, given by the following equation \cite{damped-oscillations}:
 \begin{equation} \label{eq:damped-harmonic-oscillator}
     \theta(t) = \theta_0 e^{-{t/\tau}} \cos\left(2\pi\frac{t}{T} + \phi_0\right)
 \end{equation}
-where $\theta_0$ is the initial release angle in radians, $T$ is the pendulum's period, $\phi_0$ is the angular phase shift, and $\tau$ is the decay constant that governs all factors that results in the damped harmonic motion. However, it can be inferred from this model that $T$ is constant, implying the presence of small angle approximation.
+where $\theta_0$ is the initial release angle in radians, $T$ is the pendulum's period, $\phi_0$ is the angular phase shift, and $\tau$ {\color{blue} is the decay constant that governs all factors that results in the damped harmonic motion. However, it can be inferred from this model that $T$ is constant, implying the presence of small angle approximation.}
 
+{\color{blue}
 Additionally, the amplitude-time graph of the pendulum can be modelled by removing the cosine term from Equation \ref{eq:damped-harmonic-oscillator}:
 \begin{equation} \label{eq:amplitude-function}
     A(t) = \theta_0 e^{-{t/\tau}}
-\end{equation}
+\end{equation}}
 
 In order to quantify the dampening effect of a pendulum, its Q factor may be used. The Q factor measures how damped an oscillator is and is defined as follows. \cite{pnp-physics}:
-\begin{equation} \label{eq:eq4}
+\begin{equation} \label{eq:q-factor-formula}
     Q = \pi\frac{\tau}{T}
 \end{equation}
 
-The Q factor also represents the the number of oscillations for the pendulum's amplitude to decay to $e^{-\pi}$, or $\approx 4\%$ of its original amplitude. However, it suffices to count $Q/n$ swings where the amplitude decays to $e^{-\pi/n}\,\%$ of its original. Qualitatively, when the Q factor is large, the pendulum comes to rest slower. When the Q factor is large, the pendulum comes to rest quicker.
+The Q factor also represents the the number of oscillations for the pendulum's amplitude to decay to $e^{-\pi}$, or $\approx 4\%$ of its original amplitude. {\color{blue}However, it suffices to count $Q/n$ swings where the amplitude decays to $e^{-\pi/n}\,\%$ of its original. Qualitatively, when the Q factor is large, the pendulum comes to rest slower. When the Q factor is small, the pendulum comes to rest quicker.}
+
+\newpage
 
 \section{Period and Release Angle}
 
 \subsection{Experimental Setup}
-The initial setup for the pendulum was made by first attaching a protractor on a desk. The pendulum, made by tying a piece of cotton string around a stainless steel quick link, was then placed at the center of the protractor. The length of the pendulum was measured using measuring tape. An image of the experimental setup is shown below:
+The initial setup for the pendulum was made by first attaching a protractor on a desk. The pendulum, made by tying a piece of cotton string around a stainless steel quick link {\color{blue} that was aligned to match the $90^{\circ}$ mark on the pendulum. Extra tape was also used to reinforce the pivot point, which was made to be collinear to the $0^{\circ}$ and $180^{\circ}$ markings.} The length of the pendulum was measured using measuring tape. An image of the experimental setup is shown below:
 
 \begin{figure}[!hptb]
     \centering
@@ -80,17 +83,28 @@ The data collected for the period vs. release angle graph is shown in the plot b
 \begin{figure}[!hptb]
     \centering
     \includegraphics[width=\textwidth]{../figures/period_vs_release_angle.png}
-    \caption{\centering Period plotted against release angle}
+    \caption{\centering Period plotted against release angle of the setup in Figure \ref{fig:figure 1}}
     \label{fig:figure 2}
 \end{figure}
 
-All data collected for this graph were done without the need for tracking software. The uncertainty for the protractor was taken to be the smallest increment, $0.5^{\circ}$ converted to radians, and the period uncertainty was taken to be the average human reaction time, $0.25\,\text{s}$ \cite{reaction-time}.
+All data collected for this graph were done without the need for tracking software. The uncertainty for the protractor (measured by eye) was taken to be the smallest increment, $0.5^{\circ}$ converted to radians, and the period uncertainty was taken to be the average human reaction time, $0.25\,\text{s}$ \cite{reaction-time} {\color{blue} since it is greater than the uncertainty of a stopwatch. The period itself was measured by recording the pendulum for 3 swings and dividing the total time by 3. The maximum height was taken as the reference point because there would be less certainty in the pendulum's position (lower speed).}
 
 \subsection{Analysis}
+{\color{blue}
+talk about what the b value and the c value means
+
+assymetry
+
+experimentally zero
+
+concluse that period depends on release angle
+
+comment on the r sq value alongside the residuals
+}
 According to Section \ref{Background}, if $-20^{\circ} \lesssim \theta \lesssim 20^{\circ}$, then a linear line of best fit would be expected, which matches the trends generated by the graph.
 
 Since the data collected contained angles ranging from $ 80^{\circ} \leq \theta \leq 80^{\circ}$, a quadratic power series fit modelled by the equation:
-\begin{equation}
+\begin{equation} \label{eq:power series}
     T_0(1 + B\theta_0 + C\theta_0^2)
 \end{equation}
 where $T_0$ represents the period, $\theta_0$ the release angle and $B$ and $C$ some arbitrary constants would pass through more error bars and leave smaller overall residuals than a linear fit. Thus, it can be concluded that the pendulum's period depends on amplitude, which becomes more apparent for larger angles.
@@ -148,9 +162,12 @@ However, Graph \ref{fig:figure 4} can also be used to find the Q factor by count
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+{\color{blue}
+
 \section{Period and Length}
 
 \subsection{Experimental Setup}
+
 this is version 3 of the experimental setup
 
 \subsection{Data}
@@ -166,9 +183,13 @@ this is version 3 of the experimental setup
 \section{Conclusion}
 simple pendulum equation holds fo small angles
 
+amplitude time graph also holds for small angles
 
+the small angles stuff can be concluded based on the period vs release angle graph
 
-q factor graph nobody knows what it is
+q factor graph nobody knows what it is, I came up with a plausible function based off of intuition
+
+}
 
 \newpage
 
