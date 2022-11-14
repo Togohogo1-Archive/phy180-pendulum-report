@@ -9,6 +9,7 @@
 \usepackage[format=plain, labelfont=it, font=footnotesize, labelsep=period]{caption}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{multicol}
 
 \addbibresource{references.bib}
 
@@ -19,10 +20,13 @@
 
 \begin{document}
 
+
+
 \pagenumbering{gobble}
 \maketitle
 \newpage
 
+\begin{multicols}{2}
 
 \pagenumbering{arabic}
 
@@ -60,6 +64,8 @@ In order to quantify the dampening effect of a pendulum, its Q factor may be use
 
 The Q factor also represents the the number of oscillations for the pendulum's amplitude to decay to $e^{-\pi}$, or $\approx 4\%$ of its original amplitude. {\color{blue}However, it suffices to count $Q/n$ swings where the amplitude decays to $e^{-\pi/n}\,\%$ of its original. Qualitatively, when the Q factor is large, the pendulum comes to rest slower. When the Q factor is small, the pendulum comes to rest quicker.}
 
+\end{multicols}
+
 \newpage
 
 \section{Period and Release Angle}
@@ -76,7 +82,7 @@ The initial setup for the pendulum was made by first attaching a protractor on a
 
 \newpage
 
-\subsection{Data}
+\subsection{Data} \label{subsec 3.2 Data}
 The data collected for the period vs. release angle graph is shown in the plot below:
 
 \begin{figure}[!hptb]
@@ -165,7 +171,10 @@ The best fit equation in Figure \ref{fig:figure 4} is modelled by Equation \ref{
 Given Equation \ref{eq:q-factor-formula}, $T = 1.11 \pm 0.03$ for this pendulum length and $\tau = 170$, the Q factor is calculated to be $480 \pm 5$, taking on the higher percent uncertainty of $T$ and $\tau$.
 Another way of determining the Q factor is by counting the number of oscillations as outlined in Section \ref{Background}. However, this method of determining the Q factor is suboptimal due to the nature of the exponential decay function.
 
-When the amplitude $A(t)$ decays to $e^{-\pi}\,\%$ of its original amplitude, the rate at which $A(t)$ changes decreases significantly. Given the value of amplitude $A_Q$ that corresponds to the time $t_Q$ when $A(t_Q) = e^{-\pi}\theta_0$, a large range of Q factors will satisfy a region of $A(t)$ around $t_Q$ bounded by the uncertainty values of $A_Q$. Additionally, the exact value of $e^{-\pi}\theta_0$ may  not correspond to any of the amplitudes but rather some angle in between two peaks.
+[i dont think i ever need this section anymore] When the amplitude $A(t)$ decays to $e^{-\pi}\,\%$ of its original amplitude, the rate at which $A(t)$ changes decreases significantly. Given the value of amplitude $A_Q$ that corresponds to the time $t_Q$ when $A(t_Q) = e^{-\pi}\theta_0$, a large range of Q factors will satisfy a region of $A(t)$ around $t_Q$ bounded by the uncertainty values of $A_Q$. Additionally, the exact value of $e^{-\pi}\theta_0$ may  not correspond to any of the amplitudes but rather some angle in between two peaks.
+\rule{\linewidth}{1pt}
+For example, if $A_Q + 0.009 = A(t)$ (Angle uncertainty from Subsection \ref{subsec 3.2 Data}), $t = 465\,\text{s}$, and if $A_Q - 0.009 = A(t)$, $t = 651\,\text{s}$. Thus, an upper and lower bound for $t_Q = 534\,\text{s}$, has been defined. Thus, Q and its uncertainty can then be found by dividing by the period and taking the larger percent uncertianties of both bounds, resulting in $Q = 480 \pm 90$ using the counting method.
+SHEEESH the q factor and the counting method are pretty accurate (in terms of raw value) -> this implies that tracking pendulum this was is not flawed.
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%

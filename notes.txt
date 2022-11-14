@@ -1,3 +1,18 @@
+discuss how largest uncertainty in experiment could be improved on in the future (implicitly mentioning future work)
+
+gotta make it more clear about uncertainties w smth like this:
+- t_0 represnets ..., measured to be x+dx
+- B represents ..., measured to be y+dy
+- C represents ..., measured to be z+dz
+
+units for time and other final results in equations
+
+section 4.1 instead of section 4?
+
+[if have time] embed log log plot into the normal plot
+
+==========================
+
 https://mathworld.wolfram.com/CriticallyDampedSimpleHarmonicMotion.html
 https://phys.libretexts.org/Bookshelves/Classical_Mechanics/Classical_Mechanics_(Dourmashkin)/08%3A_Applications_of_Newtons_Second_Law/8.06%3A_Drag_Forces_in_Fluids
 
