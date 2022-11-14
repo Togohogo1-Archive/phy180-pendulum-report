@@ -12,25 +12,6 @@ section 4.1 instead of section 4?
 [if have time] embed log log plot into the normal plot
 
 find necesary references for q factor
-==================================================
-
-
-mention how i kept the angle constant for q factor
-C = how much it affects the angle, etc.
-
-could have been uneven tension force -
-measuring period using tracker is much easier than relying on reaction time and also reduces uncertainty
-
-
-
-==================================================
-Stuff for 2nd check in and maybe other stuff for pendulum lab rewrite
-==================================================
-
-- based on lab1 conclusion, small angles have minimum effect on period, therefore i release anglees at a small period
-
-
-
 
 ==================================================
 Notes for next time
@@ -41,5 +22,3 @@ Notes for next time
 You can't prove the sinusoidal decay is exponential (in fact it is technically not). Here you are just using it as an acceptable model as follows:
 
 At first glance, the angle vs time data appears to follow an exponential damped sinusoidal curve. So to verify this you fit a exponentially damped sinusoidal function to angle vs time data. It turns out the fit is decent (residuals lie within/around error sizes). Hence you claim that exponential decay is a good model for the pendulum's amplitude, and extract the decay factor  from the curve fit to describe the rate of decay.
-
-wtf does a larger uncertainty for q value entail?
