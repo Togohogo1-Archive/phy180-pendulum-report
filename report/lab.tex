@@ -24,6 +24,7 @@
 
 \pagenumbering{gobble}
 \maketitle
+\tableofcontents
 \newpage
 
 \begin{multicols}{2}
@@ -171,9 +172,7 @@ The best fit equation in Figure \ref{fig:figure 4} is modelled by Equation \ref{
 Given Equation \ref{eq:q-factor-formula}, $T = 1.11 \pm 0.03$ for this pendulum length and $\tau = 170$, the Q factor is calculated to be $480 \pm 5$, taking on the higher percent uncertainty of $T$ and $\tau$.
 Another way of determining the Q factor is by counting the number of oscillations as outlined in Section \ref{Background}. However, this method of determining the Q factor is suboptimal due to the nature of the exponential decay function.
 
-[i dont think i ever need this section anymore] When the amplitude $A(t)$ decays to $e^{-\pi}\,\%$ of its original amplitude, the rate at which $A(t)$ changes decreases significantly. Given the value of amplitude $A_Q$ that corresponds to the time $t_Q$ when $A(t_Q) = e^{-\pi}\theta_0$, a large range of Q factors will satisfy a region of $A(t)$ around $t_Q$ bounded by the uncertainty values of $A_Q$. Additionally, the exact value of $e^{-\pi}\theta_0$ may  not correspond to any of the amplitudes but rather some angle in between two peaks.
-\rule{\linewidth}{1pt}
-For example, if $A_Q + 0.009 = A(t)$ (Angle uncertainty from Subsection \ref{subsec 3.2 Data}), $t = 465\,\text{s}$, and if $A_Q - 0.009 = A(t)$, $t = 651\,\text{s}$. Thus, an upper and lower bound for $t_Q = 534\,\text{s}$, has been defined. Thus, Q and its uncertainty can then be found by dividing by the period and taking the larger percent uncertianties of both bounds, resulting in $Q = 480 \pm 90$ using the counting method.
+[i dont think i ever need this section anymore] When the amplitude $A(t)$ decays to $e^{-\pi}\,\%$ of its original amplitude, the rate at which $A(t)$ changes decreases significantly. Given the value of amplitude $A_Q$ that corresponds to the time $t_Q$ when $A(t_Q) = e^{-\pi}\theta_0$, a large range of Q factors will satisfy a region of $A(t)$ around $t_Q$ bounded by the uncertainty values of $A_Q$. Additionally, the exact value of $e^{-\pi}\theta_0$ may  not correspond to any of the amplitudes but rather some angle in between two peaks. For example, if $A_Q + 0.009 = A(t)$ (Angle uncertainty from Subsection \ref{subsec 3.2 Data}), $t = 465\,\text{s}$, and if $A_Q - 0.009 = A(t)$, $t = 651\,\text{s}$. Thus, an upper and lower bound for $t_Q = 534\,\text{s}$, has been defined. Thus, Q and its uncertainty can then be found by dividing by the period and taking the larger percent uncertianties of both bounds, resulting in $Q = 480 \pm 90$ using the counting method.
 SHEEESH the q factor and the counting method are pretty accurate (in terms of raw value) -> this implies that tracking pendulum this was is not flawed.
 }
 
@@ -265,6 +264,83 @@ Unfortunately, it cannot be concluded that \ref{eq:crit-damp} is the correct mod
 
 \newpage
 
-\printbibliography
+\printbibliography[heading=bibintoc]
+
+\newpage
+
+\appendix
+
+\section{Q Factor Derivation}
+Q factor is total oscillations until amplitude decays to $e^{-\pi}\theta_0$.
+
+\begin{align*}
+    \text{total oscillations} = Q \times \frac{\text{energy lost}}{\text{1 oscillation}} &= \text{total energy lost} \\
+    \implies \quad Q &= \frac{E_T}{E_{osc}}
+\end{align*}
+
+Assuming that the energy lost per oscillation is constant \\
+
+total energy loss to decay is equal to the difference in gravitational potential energy from $\theta_0$ to $e^{-\pi}\theta_0$ since from the following diagram:
+<labelled pendulum diagram here> \\
+
+also redefine $e^{-\pi}\theta_0 = \theta_f$
+
+\begin{align*}
+    E_T &= mgL(1-\cos\theta_0) - mgL(1-\cos\theta_f)\\
+    &= mgL(\cos\theta_f-\cos\theta_0)
+\end{align*}
+
+previous equation implies that $E_T \propto L$
+
+\begin{equation}
+    E_T = c_1 L
+\end{equation}
+
+Now energy loss per oscillation - the forces that are doing the work are friction and air resistance
+
+taking the pendulum diagram again, where $\theta_1$ = angle of pendulum after 1 oscillation
+
+\begin{equation}
+    mgL(1-cos\theta_0) = mgL(1-cos\theta_1) = W_{f} + W_{d}
+\end{equation}
+
+more assumptions -> from differential equation to solve for harmonic oscillator we know that $F_f \propto \frac{d\theta}{dt} = \omega$
+
+since $\omega = \frac{2\pi}{T}$ and also Equation \ref{eq:l-over-g}, $\omega \propto \frac{1}{\sqrt{L}} \implies F_f \propto \frac{1}{\sqrt{L}}$
+
+Work = $F\times d$ and $d = L(\theta_0 - \theta_1) = \text{arc length}$, therefore
+
+\begin{align}
+    W_f &= F_f L(\theta_0 - \theta_1) \\
+    &\propto \frac{L}{\sqrt{L}} \\
+    &= c_2\sqrt{L}
+\end{align}
+
+For the air resistance, we know that $F_d = \frac{1}{2}\rho C_d A v^2$. However $v^2$ is simply $(\omega L)^2 = \left(\frac{2\pi}{T(L)} L\right)^2 = k_1L$. $\rho$ and $C_d$ doesn't change for the pendulum. $A$ changes with length - this is because as the string gets longer, the total surface area increases. With the increase in length, the drag force on the string along is porportional to its length, but the surface area of the bob must also be taken into account, resulting in the area exposed to air for pendulum to be equal to $(Lw + A_{bob})$, where $w$ is the width of the string, which does not change. Thus,
+
+\begin{equation}
+    F_d = \frac{1}{2}\rho C_d (Lw + A_{bob}) k_1L
+\end{equation}
+
+Then the work done is represnted by
+\begin{align*}
+    W_d &= F_d L(\theta_0 - \theta_1) \\
+    &= c_4L^2(L+c_3)
+\end{align*}
+
+Thus, the final equation for Q factor is represented by the equation
+\begin{align}
+    Q(L) &= \frac{c_1L}{c_2\sqrt{L} + c_4L^2(L+c_3)} \\
+    &= \frac{d_1L}{d_2\sqrt{L} + L^2(L+d_3)}
+\end{align}
+
+where $d_1$, $d_2$, and $d_3$ are new constants after dividing the top and bottom by $c_4$.
+
+
+
+
+
+
+
 
 \end{document}

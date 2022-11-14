@@ -32,31 +32,7 @@ commend on the small angles
 ==================================================
 Stuff for 2nd check in and maybe other stuff for pendulum lab rewrite
 ==================================================
-How to we calculate Q factor for 2nd graph
-- choose from first report
-- if they dont then have to justify why one is better than the other
-- both methods of determining the Q factor are experimental
 
-Data points for lab 3
-- 10 lower bound
-
-Should lab2 be separate from lab 1
-- lab 2 using small angles, build a big report now rather than make 2 reports
-
-Graphs for check in 3
-- period length
-- q-length graphs
-- also prepared to tell TA conclusions you can draw from the graphs
-
-- earlier reports showed how you found the Q factor once, then thats all you need, clearly state method of finding Q factor in lab2
-    - find out which method of Q value has less uncertainty (how to find the uncertainty by counting)
-
-Log Log graph?
--
-
-if i have an hold version of determining Q factor (larg angle) and i try again, do i need to log it
-- fix it in some way?? idk
-** i released the pendulum from a large angle for the amplitude-time graph. I want to redo that data, do I include the old stuff innit?
 - based on lab1 conclusion, small angles have minimum effect on period, therefore i release anglees at a small period
 
 
@@ -82,6 +58,3 @@ You can't prove the sinusoidal decay is exponential (in fact it is technically n
 At first glance, the angle vs time data appears to follow an exponential damped sinusoidal curve. So to verify this you fit a exponentially damped sinusoidal function to angle vs time data. It turns out the fit is decent (residuals lie within/around error sizes). Hence you claim that exponential decay is a good model for the pendulum's amplitude, and extract the decay factor  from the curve fit to describe the rate of decay.
 
 wtf does a larger uncertainty for q value entail?
-
-
-how to Uncertainty for Q value when counting
