@@ -11,23 +11,17 @@ section 4.1 instead of section 4?
 
 [if have time] embed log log plot into the normal plot
 
-==========================
+find necesary references for q factor
+==================================================
 
-https://mathworld.wolfram.com/CriticallyDampedSimpleHarmonicMotion.html
-https://phys.libretexts.org/Bookshelves/Classical_Mechanics/Classical_Mechanics_(Dourmashkin)/08%3A_Applications_of_Newtons_Second_Law/8.06%3A_Drag_Forces_in_Fluids
 
 mention how i kept the angle constant for q factor
-what should I fit q factor to
-q factor table in appendix bc the uncertainties are small
 C = how much it affects the angle, etc.
 
 could have been uneven tension force -
-if have time for the last report, given the same height, angle of the "v" vs period
 measuring period using tracker is much easier than relying on reaction time and also reduces uncertainty
 
-keeping variables the same = only varying one parameter, make sure that no other factors influence my lab
 
-commend on the small angles
 
 ==================================================
 Stuff for 2nd check in and maybe other stuff for pendulum lab rewrite
@@ -43,15 +37,6 @@ Notes for next time
 ==================================================
 
 - convert degrees to radians in next report
-
-- tracker uncertainty
-- power series b value using that to determine if it is symmetrical?
-
-If you get 0.003±0.001, it is somewhere between 0.002 and 0.004, which does not contain zero and you can't say it's symmetrical;
-If you get 0.001±0.003, it is somewhere between -0.002 and 0.004, which contains zero and you can say it's symmetrical.
-
-
-reference more graphs in the future
 
 You can't prove the sinusoidal decay is exponential (in fact it is technically not). Here you are just using it as an acceptable model as follows:
 
