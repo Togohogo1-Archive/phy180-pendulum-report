@@ -1,3 +1,8 @@
+rounds of double checking
+========================================
+
+center of mass is at the center to align with the string
+
 discuss how largest uncertainty in experiment could be improved on in the future (implicitly mentioning future work)
 
 gotta make it more clear about uncertainties w smth like this:
@@ -12,6 +17,15 @@ section 4.1 instead of section 4?
 [if have time] embed log log plot into the normal plot
 
 find necesary references for q factor
+
+revise definition of ideal pendulum
+
+the period will change due to drag -> more impact for angle of 60 degrees ngl, also pendulum doesn't behave like an ideal pendulum
+
+expected change in period -> if change in period falls within period uncertainty then i'm gucci
+
+weight of the string is not negligible as the length increases to a craz amo
+
 
 ==================================================
 Notes for next time

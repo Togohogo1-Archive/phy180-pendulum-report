@@ -27,36 +27,52 @@
 \tableofcontents
 \newpage
 
-\begin{multicols}{2}
-
 \pagenumbering{arabic}
 
 \section{Introduction}
 {\color{blue}The purpose of this lab report is to evaluate the accuracy of various theoretical models used to predict the behaviour of a simple pendulum, namely the relationship between period and release angle, amplitude and time, period and length, and Q factor and length.}
 
 \section{Background} \label{Background}
-{\color{blue}A simple pendulum can be defined as a weight suspended below a pivot point to which it swings back and forth freely along a plane that contains the pivot point via a flexible string. The length of the pendulum is defined as the distance from the pivot to the center of mass of the weight hanging from the pendulum. Usually, the weight of the string is negligible in comparison to the pendulum mass.} For a simple pendulum of length $L$ experiencing a downwards force due to gravity $g$, the period $T$, for a release angle $\theta$, is given by the following equation \cite{the-simple-pendulum}:
+A simple pendulum can be defined as a weight suspended via a flexible string, below a pivot point to which it swings back and forth freely along a plane that contains the pivot point. The length of the pendulum is defined as the distance from the pivot point to the weight's center of mass. For a simple pendulum of length $L$ experiencing a downwards force due to gravity $g$, the period $T$, for a release angle $\theta$, is given by the following equation \cite{the-simple-pendulum}, provided that the mass of the string is negligible compared to the mass of the weight:
 \begin{equation} \label{eq:l-over-g}
     T = 2\pi \sqrt{\frac{L}{g}}
 \end{equation}
 
-{\color{blue}Note that Equation \ref{eq:l-over-g} does not depend on $\theta$ because it represents the behaviour of an ideal pendulum.} More realistically, the behavior of a pendulum assuming no energy loss due to friction can be modelled with a second order differential equation of $\theta$ with respect to $t$:
+
+
+More realistically, the behavior of an ideal pendulum assuming no energy loss due to friction can be modelled with a second order differential equation of $\theta$ with respect to $t$
 \begin{equation} \label{eq:diffeq-pendulum}
     \frac{d^2\theta}{dt^2} + \frac{g}{L}\sin{\theta} = 0
 \end{equation}
-{\color{blue}which cannot be solved in terms of elementary functions \cite{no-elementary-fns}. However, if small angle approximation is assumed, where $\sin\theta \approx \theta$, the differential equation can be rewritten and solved to yield $\theta(t)$ in terms of a sine wave with period of Equation \ref{eq:l-over-g}. For $|\theta| \lesssim 20^{\circ}$, small angle approximation (and therefore simple harmonic motion) holds \cite{the-simple-pendulum}.} Additionally, the the mass of the pendulum weight does not show up in any of the equations, implying that pendulum period does not depend on mass for the previous models.
+where the solution $\theta(t)$ cannot be easily represented in terms of elementary functions \cite{no-elementary-fns}. Accordingly, the derived formula for $T(\theta)$ from Equation \ref{eq:diffeq-pendulum} is best described as an infinite series \cite{no-elementary-fns-2}:
+\begin{align} \label{eq:power-series-derived}
+\begin{split}
+    T(\theta) &= 2\pi\sqrt{\frac{L}{g}} \left(1 + \frac{1}{4}\sin^2\frac{\theta}{2} \right. + \\
+    &\phantom{{}=}\left. \frac{9}{64}\sin^4\frac{\theta}{2} + \frac{225}{2304}\sin^6\frac{\theta}{2} + \ldots \right)
+\end{split}
+\end{align}
 
-Another way to model a pendulum realistically is to incorporate dampening from air resistance and friction within the string fibres, given by the following equation \cite{damped-oscillations}:
+
+Equation \ref{eq:power-series-derived} essentially equals Equation \ref{eq:l-over-g} when $\theta$ is extremely small. This is known as the small angle approximation of a pendulum and it holds (implying simple harmonic motion also holds) for $|\theta| \lesssim 20^{\circ}$ \cite{the-simple-pendulum}. When $\theta$ is in this range, $\sin\theta \approx \theta$. Additionally, all previous models demonstrate that pendulum period does not depends on mass of the weight.
+
+Another way to realistically model a pendulum is to incorporate dampening from frictional forces given by the following equation \cite{damped-oscillations}
 \begin{equation} \label{eq:damped-harmonic-oscillator}
     \theta(t) = \theta_0 e^{-{t/\tau}} \cos\left(2\pi\frac{t}{T} + \phi_0\right)
 \end{equation}
-where $\theta_0$ is the initial release angle in radians, $T$ is the pendulum's period, $\phi_0$ is the angular phase shift, and $\tau$ {\color{blue} is the decay constant that governs all factors that results in the damped harmonic motion. However, it can be inferred from this model that $T$ is constant, implying the presence of small angle approximation.}
+where:
 
-{\color{blue}
+\begin{tabular}{c@{{}={}}l}
+    a & a\\
+    a & a\\
+    a & a\\
+\end{tabular}
+
+$\theta_0$ is the initial release angle in radians, $T$ is the pendulum's period, $\phi_0$ is the angular phase shift, and $\tau$ is the decay constant that governs all factors that results in the damped harmonic motion. However, it can be inferred from this model that $T$ is constant, implying the presence of small angle approximation.
+
 Additionally, the amplitude-time graph of the pendulum can be modelled by removing the cosine term from Equation \ref{eq:damped-harmonic-oscillator}:
 \begin{equation} \label{eq:amplitude-function}
     A(t) = \theta_0 e^{-{t/\tau}}
-\end{equation}}
+\end{equation}
 
 In order to quantify the dampening effect of a pendulum, its Q factor may be used. The Q factor measures how damped an oscillator is and is defined as follows. \cite{pnp-physics}:
 \begin{equation} \label{eq:q-factor-formula}
@@ -64,8 +80,6 @@ In order to quantify the dampening effect of a pendulum, its Q factor may be use
 \end{equation}
 
 The Q factor also represents the the number of oscillations for the pendulum's amplitude to decay to $e^{-\pi}$, or $\approx 4\%$ of its original amplitude. {\color{blue}However, it suffices to count $Q/n$ swings where the amplitude decays to $e^{-\pi/n}\,\%$ of its original. Qualitatively, when the Q factor is large, the pendulum comes to rest slower. When the Q factor is small, the pendulum comes to rest quicker.}
-
-\end{multicols}
 
 \newpage
 
