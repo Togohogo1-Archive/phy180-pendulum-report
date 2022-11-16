@@ -59,13 +59,19 @@ Another way to realistically model a pendulum is to incorporate dampening from f
 \begin{equation} \label{eq:damped-harmonic-oscillator}
     \theta(t) = \theta_0 e^{-{t/\tau}} \cos\left(2\pi\frac{t}{T} + \phi_0\right)
 \end{equation}
-where:
 
-\begin{tabular}{c@{{}={}}l}
-    a & a\\
-    a & a\\
-    a & a\\
-\end{tabular}
+\newpage
+
+{
+\setlength{\abovedisplayskip}{2.5pt}
+where:
+\begin{flalign*}
+    \qquad \theta_0 &= \text{initial release angle in radians} & \\
+    \qquad \theta_0 &= \text{initial release angle in radians} & \\
+    \qquad \theta_0 &= \text{initial release angle in radians} & \\
+    \qquad \theta_0 &= \text{initial release angle in radians} &
+\end{flalign*}
+}
 
 $\theta_0$ is the initial release angle in radians, $T$ is the pendulum's period, $\phi_0$ is the angular phase shift, and $\tau$ is the decay constant that governs all factors that results in the damped harmonic motion. However, it can be inferred from this model that $T$ is constant, implying the presence of small angle approximation.
 
