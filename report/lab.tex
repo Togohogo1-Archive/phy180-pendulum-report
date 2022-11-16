@@ -20,8 +20,6 @@
 
 \begin{document}
 
-
-
 \pagenumbering{gobble}
 \maketitle
 \tableofcontents
@@ -29,6 +27,10 @@
 
 \pagenumbering{arabic}
 
+
+
+
+\begin{multicols}{2}
 \section{Introduction}
 {\color{blue}The purpose of this lab report is to evaluate the accuracy of various theoretical models used to predict the behaviour of a simple pendulum, namely the relationship between period and release angle, amplitude and time, period and length, and Q factor and length.}
 
@@ -40,7 +42,7 @@ A simple pendulum can be defined as a weight suspended via a flexible string, be
 
 
 
-More realistically, the behavior of an ideal pendulum assuming no energy loss due to friction can be modelled with a second order differential equation of $\theta$ with respect to $t$
+More realistically, the behavior of an ideal pendulum assuming no energy loss due to friction can be modelled with a second order differential equation of $\theta$ with respect to $t$:
 \begin{equation} \label{eq:diffeq-pendulum}
     \frac{d^2\theta}{dt^2} + \frac{g}{L}\sin{\theta} = 0
 \end{equation}
@@ -59,23 +61,19 @@ Another way to realistically model a pendulum is to incorporate dampening from f
 \begin{equation} \label{eq:damped-harmonic-oscillator}
     \theta(t) = \theta_0 e^{-{t/\tau}} \cos\left(2\pi\frac{t}{T} + \phi_0\right)
 \end{equation}
-
-\newpage
-
+where:
 {
 \setlength{\abovedisplayskip}{2.5pt}
-where:
 \begin{flalign*}
-    \qquad \theta_0 &= \text{initial release angle in radians} & \\
-    \qquad \theta_0 &= \text{initial release angle in radians} & \\
-    \qquad \theta_0 &= \text{initial release angle in radians} & \\
-    \qquad \theta_0 &= \text{initial release angle in radians} &
+    \quad \theta_0 &= \text{initial release angle in radians} & \\ % \\[-3pt] for paragraphs
+    % \quad &\phantom{{}={}} \text{ayo continuation br}\\
+    \quad T &= \text{pendulum's period} & \\
+    \quad \phi_0 &= \text{angular phase shift} & \\
+    \quad \tau &= \text{decay constant governing damping} &
 \end{flalign*}
 }
 
-$\theta_0$ is the initial release angle in radians, $T$ is the pendulum's period, $\phi_0$ is the angular phase shift, and $\tau$ is the decay constant that governs all factors that results in the damped harmonic motion. However, it can be inferred from this model that $T$ is constant, implying the presence of small angle approximation.
-
-Additionally, the amplitude-time graph of the pendulum can be modelled by removing the cosine term from Equation \ref{eq:damped-harmonic-oscillator}:
+It can be inferred from Equation \ref{eq:damped-harmonic-oscillator} that $T$ is constant for this model, implying the presence of small angle approximation. Additonally, removing the cosing term yields the amplitude-time graph:
 \begin{equation} \label{eq:amplitude-function}
     A(t) = \theta_0 e^{-{t/\tau}}
 \end{equation}
@@ -85,8 +83,10 @@ In order to quantify the dampening effect of a pendulum, its Q factor may be use
     Q = \pi\frac{\tau}{T}
 \end{equation}
 
+
 The Q factor also represents the the number of oscillations for the pendulum's amplitude to decay to $e^{-\pi}$, or $\approx 4\%$ of its original amplitude. {\color{blue}However, it suffices to count $Q/n$ swings where the amplitude decays to $e^{-\pi/n}\,\%$ of its original. Qualitatively, when the Q factor is large, the pendulum comes to rest slower. When the Q factor is small, the pendulum comes to rest quicker.}
 
+\end{multicols}
 \newpage
 
 \section{Period and Release Angle}
