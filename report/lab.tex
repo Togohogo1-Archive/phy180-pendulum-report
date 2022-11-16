@@ -10,6 +10,9 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{lipsum}
 
 \addbibresource{references.bib}
 
@@ -73,38 +76,44 @@ where:
 \end{flalign*}
 }
 
-It can be inferred from Equation \ref{eq:damped-harmonic-oscillator} that $T$ is constant for this model, implying the presence of small angle approximation. Additonally, removing the cosing term yields the amplitude-time graph:
+It can be inferred from Equation \ref{eq:damped-harmonic-oscillator} that $T$ is constant for this model, implying the presence of small angle approximation. Additionally, removing the cosine term yields the amplitude-time graph:
 \begin{equation} \label{eq:amplitude-function}
     A(t) = \theta_0 e^{-{t/\tau}}
 \end{equation}
 
-In order to quantify the dampening effect of a pendulum, its Q factor may be used. The Q factor measures how damped an oscillator is and is defined as follows. \cite{pnp-physics}:
+In order to quantify a pendulum's damping, its Q factor may be used. The Q factor measures how damped an oscillator is and is defined as follows. \cite{pnp-physics}:
 \begin{equation} \label{eq:q-factor-formula}
     Q = \pi\frac{\tau}{T}
 \end{equation}
 
+The Q factor is also defined by the amount of oscillations it takes for the pendulum's amplitude to decay to $e^{-\pi} \approx 4\%$ of its original amplitude during release. Qualitatively, when the Q factor is large, the pendulum comes to rest slower. When the Q factor is small, the pendulum comes to rest quicker.
 
-The Q factor also represents the the number of oscillations for the pendulum's amplitude to decay to $e^{-\pi}$, or $\approx 4\%$ of its original amplitude. {\color{blue}However, it suffices to count $Q/n$ swings where the amplitude decays to $e^{-\pi/n}\,\%$ of its original. Qualitatively, when the Q factor is large, the pendulum comes to rest slower. When the Q factor is small, the pendulum comes to rest quicker.}
-
-\end{multicols}
 \newpage
 
-\section{Period and Release Angle}
+\section{\mbox{Period and Release} \\ Angle}
 
 \subsection{Experimental Setup}
 The initial setup for the pendulum was made by first attaching a protractor on a desk. The pendulum, made by tying a piece of cotton string around a stainless steel quick link {\color{blue} that was aligned to match the $90^{\circ}$ mark on the pendulum. Extra tape was also used to reinforce the pivot point, which was made to be collinear to the $0^{\circ}$ and $180^{\circ}$ markings.} An image of the experimental setup is shown below:
 
-\begin{figure}[!hptb]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{../figures/exp_setup1.jpg}
+    \includegraphics[width=\linewidth]{../figures/exp_setup1.jpg}
     \caption{\centering Picture of experimental setup for period vs. release angle data collection}
     \label{fig:figure 1}
 \end{figure}
 
-\newpage
+\lipsum
+\lipsum
+\lipsum
+\lipsum
 
 \subsection{Data} \label{subsec 3.2 Data}
 The data collected for the period vs. release angle graph is shown in the plot below:
+
+
+
+\end{multicols}
+\newpage
 
 \begin{figure}[!hptb]
     \centering
@@ -273,7 +282,7 @@ The Q factor for every length was calculated by using Equation \ref{eq:q-factor-
 \subsection{Analysis}
 The Q factor seems to peak at a certain point, which could be explained by the following. When the pendulum length is small, the force of air resistance plays less of a role than the force of friction at the end of the string and within the string fibers. When the pendulum length is long, the force of air resistance plays more of a role than all forces of friction within the string. This is because for a longer string released at the same angle as a smaller string, more gravitational potential energy gets converted to kinetic energy, implying a higher speed and even higher force of drag since its porportional to $v^2$ \cite{airdrag}. Additionally, the weight of the string starts to not be negligible when the pendulum length is long, as the pendulum stop behaving like a simple pendulum and the string also contributes to a surface area that experiences drag.
 
-Modelling the Q factor graph in terms of a exponential, quadratic, sinusoidal, or power law function makes zero sense because intuitively, the Q factor should be 0 when the string length equals 0, and the Q factor should approach 0 when the string length is extremely long. A function that seems to satisfy these constraints is given by
+Modelling the Q factor graph in terms of a exponential, quadratic, sinusoidal, or power law function makes zero sense because intuitively, the Q factor should be 0 when the string length equals 0, and the Q factor should approach 0 when the string length is extremely long. A function that seems to satisfy these constraints is given by\footnote{a full derivation for this equation is found in the appendix}
 \begin{equation} \label{eq:crit-damp}
     Axe^{-bx}
 \end{equation}
@@ -301,7 +310,7 @@ Q factor is total oscillations until amplitude decays to $e^{-\pi}\theta_0$.
 Assuming that the energy lost per oscillation is constant \\
 
 total energy loss to decay is equal to the difference in gravitational potential energy from $\theta_0$ to $e^{-\pi}\theta_0$ since from the following diagram:
-<labelled pendulum diagram here> \\
+<labelled pendulum diagram here or can just say determine geometrically> \\
 
 also redefine $e^{-\pi}\theta_0 = \theta_f$
 
