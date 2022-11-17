@@ -147,7 +147,7 @@ A single-stringed pendulum like the one presented in Section \ref{sec 3 period a
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{../figures/exp_setup3_front.png}
-    \caption{\centering Improved version of the pendulum used to determine Q factor. This is actually the third version. Issues that arose with the second version will be discussed later in this section.}
+    \caption{\centering Improved version of the pendulum used to determine Q factor.}
     \label{fig:figure 3}
 \end{figure}
 
@@ -159,30 +159,26 @@ The Q factor can be determined by plotting
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{../figures/max_amplitude_vs_time.png}
-    \caption{\centering Graph of maximum amplitude vs. time}
+    \caption{\centering Graph of maximum amplitude vs. time. This graph was initially generated inaccurately.}
     \label{fig:figure 4}
 \end{figure}
 
-{\color{blue}
-The pendulum was released from an angle of approximately $20^\circ$ to ensure the period stays constant as it is oscillating. The first version of this graph was generated with an initial release angle of 60 degrees, which resulted the period to decrease with time, producing an inaccurate Q factor. This pendulum (version 2) has since been deconstructed.
+The weight was released from an angle of approximately $20^\circ$ to ensure that period stays constant as it is oscillationg (within small angle approximation). Initially, Figure \ref{fig:figure 4} was generated with a release angle of $60^\circ$, resulting the period to decrease with time due to frictional forces, producing an inaccurate Q factor.
 
-To calculate the amplitudes, the length of the video was first divided into 15\,-\,20 equal intervals. For every interval, a few frames were advanced or reversed until the closest maximum amplitude could be determined.
+To determine the amplitude at a given time, the full length of the video was divided into 15\,-\,20 equal intervals. For every interval, a few frames were moved forwards or backwards until the closest maximum amplitude was reached.
 
-
-The uncertainty for each angle was measured in Tracker \cite{tracker} at the frame where $\theta$ reached a maximum. Due the double-stringed setup, two strings will appear in the frame. The angle was taken to be the midpoint of the region that the strings formed and the uncertainty half of the total angle of the region. An image of angle calculation is shown below:}
-
+The value for each amplitude was measured in Tracker \cite{tracker} at the frame where the angle reached a local maximum. When two strings appears in the frame due to camera skew, the angle was taken to be the midpoint of the region that the strings form. The uncertainty for angle was then taken to be half the total angle of the region. An image of angle calculation is shown below:
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{../figures/tracker.png}
-    \caption{\centering Angle determination in Tracker. The red and blue diamonds represents the upper and lower bound of the angle, represented in xy coordinates relative to the pink axes, which can be converted to angles.}
+    \caption{\centering Angle determination in Tracker. The red and blue points (coordinates relative to pink axis) highlight the region for angle measurement and uncertainty.}
     \label{fig:figure5}
 \end{figure}
 
-By using Tracker, the uncertainty for period can be decreased from 0.25\,s to 0.03\,s, which equals to the frame rate. This is because Tracker allows the frame-by-frame playback and pausing of a video, especially at a maximum amplitude. {\color{blue}Period itself is measured by converting the number of frames taken for 5 swings into seconds, and dividing that number by 5.}
+The uncertainty for time was taken to be 1/30 since the video was captured at 30 frames per second.
 
-Lastly, the uncertainty for time was taken to be {\color{blue}1/30} where {\color{blue}30} represents the frame rate (fps) of the video.
-
+Although not plotted in the graph, the period is also needed for Q factor calculation. Using Tracker, period was measured by converting the number of frames taken for 5 swings into seconds, then dividing that value by 5. The uncertainty for period can then be reduced from 0.25\,s to 0.03\,s (same as time uncertainty) because Tracker allows the frame-by-frame playback and pausing of a video.
 
 \subsection{Analysis}
 {\color{blue}
