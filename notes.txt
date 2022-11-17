@@ -1,6 +1,8 @@
 rounds of double checking
 ========================================
 
+where: put or odnt put colon moment
+
 introduce the data
 present details on collecting strategies
 
@@ -22,11 +24,7 @@ units for time and other final results in equations
 
 section 4.1 instead of section 4?
 
-[if have time] embed log log plot into the normal plot
-
 find necesary references for q factor
-
-revise definition of ideal pendulum
 
 the period will change due to drag -> more impact for angle of 60 degrees ngl, also pendulum doesn't behave like an ideal pendulum
 
@@ -41,6 +39,5 @@ Notes for next time
 
 - convert degrees to radians in next report
 
-You can't prove the sinusoidal decay is exponential (in fact it is technically not). Here you are just using it as an acceptable model as follows:
 
 At first glance, the angle vs time data appears to follow an exponential damped sinusoidal curve. So to verify this you fit a exponentially damped sinusoidal function to angle vs time data. It turns out the fit is decent (residuals lie within/around error sizes). Hence you claim that exponential decay is a good model for the pendulum's amplitude, and extract the decay factor  from the curve fit to describe the rate of decay.

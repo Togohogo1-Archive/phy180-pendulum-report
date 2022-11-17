@@ -56,7 +56,11 @@ where the solution $\theta(t)$ cannot be easily represented in terms of elementa
 \end{align}
 
 
-Equation \ref{eq:power-series-derived} essentially equals Equation \ref{eq:l-over-g} when $\theta$ is extremely small. This is known as the small angle approximation of a pendulum and it holds (implying simple harmonic motion also holds) for $|\theta| \lesssim 20^{\circ}$ \cite{the-simple-pendulum}. When $\theta$ is in this range, $\sin\theta \approx \theta$. Additionally, all previous models demonstrate that pendulum period does not depends on mass of the weight.
+Equation \ref{eq:power-series-derived} essentially equals Equation \ref{eq:l-over-g} when $\theta$ is extremely small. This is known as the small angle approximation of a pendulum and it holds (implying simple harmonic motion also holds) for \cite{the-simple-pendulum}
+\begin{equation} \label{eq:small-angle-approx}
+    |\theta| \lesssim 20^{\circ}
+\end{equation}
+When $\theta$ is in this range, $\sin\theta \approx \theta$. Additionally, all previous models demonstrate that pendulum period does not depends on mass of the weight.
 
 Another way to realistically model a pendulum is to incorporate dampening from frictional forces given by the following equation \cite{damped-oscillations}
 \begin{equation} \label{eq:damped-harmonic-oscillator}
@@ -66,10 +70,10 @@ where:
 {
 \setlength{\abovedisplayskip}{2.5pt}
 \begin{flalign*}
-    \quad \theta_0 &= \text{initial release angle in radians} & \\ % \\[-3pt] for paragraphs
+    \quad \theta_0 &= \text{initial release angle in rad} & \\ % \\[-3pt] for paragraphs
     % \quad &\phantom{{}={}} \text{ayo continuation br}\\
-    \quad T &= \text{pendulum's period} & \\
-    \quad \phi_0 &= \text{angular phase shift} & \\
+    \quad T &= \text{pendulum's period in s} & \\
+    \quad \phi_0 &= \text{angular phase shift in rad} & \\
     \quad \tau &= \text{decay constant governing damping} &
 \end{flalign*}
 }
@@ -109,22 +113,31 @@ The data collected for the period vs. release angle graph is shown below:
     \label{fig:figure 2}
 \end{figure}
 
-In total, the weight was released from 8 angles on both sides, starting from $10^\circ$ and taking increments of $10^\circ$ up to $80^\circ$. The uncertainty for each release angle was taken to $0.5^{\circ}$, the smallest increment on the protractor (converted to radians on graph). The period was measured by recording the pendulum for for 3 swings and dividing the total time by 3, taking its maximum height as the reference point to reduce uncertainty in the weight's position (weight fastest at its minimum). The period uncertainty was taken to be $0.25\,\text{s}$, the average human reaction time \cite{reaction-time}, since it is greater than the uncertainty of the stopwatch ($0.05\,\text{s}$) used.
+In total, the weight was released from 8 angles on both sides of the $0^{\circ}$ mark, starting from $10^\circ$ and taking increments of $10^\circ$ up to $80^\circ$. The uncertainty for each release angle was taken to $0.5^{\circ}$, the smallest increment on the protractor (converted to radians on graph). The period was measured by recording the pendulum for for 3 swings and dividing the total time by 3, taking its maximum height as the reference point to reduce uncertainty in the weight's position (weight fastest at its minimum). The period uncertainty was taken to be $0.25\,\text{s}$, the average human reaction time \cite{reaction-time}, since it is greater than the uncertainty of the stopwatch ($0.05\,\text{s}$) used.
 
 All data collected were done without the need for tracking software.
 
 \subsection{Analysis}
-According to Section \ref{Background}, {\color{blue} if $|\theta| \lesssim 20^{\circ}$, then a line of best fit with slope 0 would be expected, which is observed to happen for the 4 closes points plotted from a release angle of $0^\circ$. However, as the release angle increases, the overall trend deviates from Equation \ref{eq:l-over-g} and takes on more of a parabolic shape which can be modelled by a quadratic power series, which corresponds to the best fit line from Figure \ref{fig:figure 1}:}
+Qualitatively, the pendulum period stays relatively constant for small release angles. As release angle increases, the period deviates from the trend suggested by Equation \ref{eq:l-over-g} for large angles, taking on a symmetric parabolic shape. Thus, a quadratic power series can be used to model this relationship, corresponding to the best-fit line from Figure \ref{fig:figure 2}
 \begin{equation} \label{eq:power series}
-    T_0(1 + B\theta_0 + C\theta_0^2)
+   T =  T_0(1 + B\theta_0 + C\theta_0^2)
 \end{equation}
-where $T_0$ represents the period, $\theta_0$ the release angle and $B$ and $C$ some arbitrary constants. {\color{blue}Since the $r^2$ value is relatively close to 1, the residuals are both small and consistent, and the graph passes through all error bars, this fit would be a valid representation of the trend. Additionally, the uncertainty for $T_0 = 0.03$, $B = 0.005$ and $C = 0.007$, calculated through fitting the trendline with a Python program.
+where:
+{
+\setlength{\abovedisplayskip}{2.5pt}
+\begin{flalign*}
+    \theta_0 &= \text{release angle in rad}\\
+    T_0 &= \text{smallest measured period}, (4.40\pm0.03)\,\text{s} \\
+    B &= \text{constant for symmetry}, -0.001\pm0.005\\
+    C &= \text{constant for deviation}, 0.091\pm0.007
+\end{flalign*}
+}
 
-The terms $B$ and $C$ are also significant because they describe the symmetry of parabola and how much it deviates from the trend described in Equation \ref{eq:l-over-g}. If $B$ does not equal 0, the parabola will not be centered at $\theta = 0$. Since the experimentally determined value of B is smaller than its uncertainty, it suffices to say that $B = 0$, which implies symmetry in the graph. On the other hand, if $C = 0$, then the line of best fit will have slope 0. However, this was determined experimentally to not be the case.
+The uncertainties for unknown variables in the best-fit equation were calculated with a Python program.
 
-Lastly, the residuals shown on the graph do not suggest much asymmetry regarding the pendulum as the negative release angles appear symmetrical when compared to positive release angles. However, a single-stringed pendulum tends to spin in an elliptical fashion when released, affecting accurate measurements.
+By inspection, the calculated value of $T_0$ falls within the uncertainty range of the experimental value of $T_0$ (period with a release angle of $10^{\circ}$). The terms $B$ and $C$ are also significant because they describe the symmetry of parabola and how much it deviates from the trend described in Equation \ref{eq:l-over-g}. If $B \neq 0$, the parabola will not be centered at $\theta = 0$. Since the experimentally determined value of B is smaller than its uncertainty, it suffices to say that $B = 0$, implying symmetry in the graph. On the other hand, if $C = 0$, then the line of best fit will have slope 0. However, this was determined experimentally to not be the case.
 
-Thus, it can be concluded that the pendulum period depends on release angle.}
+Given that the $r^2$ value is relatively close to 1, the residuals are both small and consistent, and the graph passes passes through all error bars, this fit would be a valid representation of the trend, suggesting that the pendulum period depends on release angle.
 
 \section{Finding the Q Factor} \label{Finding the Q Factor}
 
@@ -140,9 +153,8 @@ A single-stringed pendulum like the one presented in Section \ref{sec 3 period a
 
 
 \subsection{Data}
-{\color{blue}
-The Q factor can be determined by plotting the amplitude-time graph, as shown below:
-}
+The Q factor can be determined by plotting
+ data collected for the amplitude vs. time graph, as shown below:
 
 \begin{figure}[H]
     \centering
