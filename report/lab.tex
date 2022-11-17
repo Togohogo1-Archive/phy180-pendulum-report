@@ -2,7 +2,7 @@
 
 \usepackage{graphicx}
 \usepackage[sorting=none]{biblatex}
-\usepackage[margin=1in]{geometry}
+\usepackage[margin=0.75in]{geometry}
 \usepackage[colorlinks=true]{hyperref}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -16,7 +16,7 @@
 
 \addbibresource{references.bib}
 
-\title{Pendulum Lab Report II}
+\title{Pendulum Lab Report III}
 \author{Kevin (Zerui) Wang}
 \date{\today}
 
@@ -25,13 +25,15 @@
 
 \pagenumbering{gobble}
 \maketitle
+
+{
+\hypersetup{linkcolor=black}
 \tableofcontents
+}
+
 \newpage
 
 \pagenumbering{arabic}
-
-
-
 
 \begin{multicols}{2}
 \section{Introduction}
@@ -88,12 +90,10 @@ In order to quantify a pendulum's damping, its Q factor may be used. The Q facto
 
 The Q factor is also defined by the amount of oscillations it takes for the pendulum's amplitude to decay to $e^{-\pi} \approx 4\%$ of its original amplitude during release. Qualitatively, when the Q factor is large, the pendulum comes to rest slower. When the Q factor is small, the pendulum comes to rest quicker.
 
-\newpage
-
-\section{\mbox{Period and Release} \\ Angle}
+\section{Period and Release Angle} \label{sec 3 period and release angle}
 
 \subsection{Experimental Setup}
-The initial setup for the pendulum was made by first attaching a protractor on a desk. The pendulum, made by tying a piece of cotton string around a stainless steel quick link {\color{blue} that was aligned to match the $90^{\circ}$ mark on the pendulum. Extra tape was also used to reinforce the pivot point, which was made to be collinear to the $0^{\circ}$ and $180^{\circ}$ markings.} An image of the experimental setup is shown below:
+The initial setup for the pendulum was made by first taping a protractor on a desk. The weight was hanged by tying a piece of cotton string around a stainless steel quick link that was aligned to match the $90^{\circ}$ mark on the pendulum. Extra tape was also used to reinforce the pivot point, made to be collinear with the $0^{\circ}$ and $180^{\circ}$ markings. An image of the experimental setup is shown below:
 
 \begin{figure}[H]
     \centering
@@ -102,8 +102,9 @@ The initial setup for the pendulum was made by first attaching a protractor on a
     \label{fig:figure 1}
 \end{figure}
 
+
 \subsection{Data} \label{subsec 3.2 Data}
-The data collected for the period vs. release angle graph is shown in the plot below:
+The data collected for the period vs. release angle graph is shown below:
 
 \begin{figure}[H]
     \centering
@@ -112,7 +113,9 @@ The data collected for the period vs. release angle graph is shown in the plot b
     \label{fig:figure 2}
 \end{figure}
 
-All data collected for this graph were done without the need for tracking software. {\color{blue}In total, 8 angles were recoded from both sides of the pendulum, starting from $10^\circ$ and taking increments of $10^\circ$ up to $80^\circ$}. The uncertainty for the protractor (measured by eye) was taken to be the smallest increment, $0.5^{\circ}$ converted to radians, and the period uncertainty was taken to be the average human reaction time, $0.25\,\text{s}$ \cite{reaction-time} {\color{blue} since it is greater than the uncertainty of a stopwatch. The period itself was measured by recording the pendulum for 3 swings and dividing the total time by 3. The maximum height was taken as the reference point because there would be less certainty in the pendulum's position (lower speed).}
+In total, the weight was released from 8 angles on both sides, starting from $10^\circ$ and taking increments of $10^\circ$ up to $80^\circ$. The uncertainty for each release angle was taken to $0.5^{\circ}$, the smallest increment on the protractor (converted to radians on graph). The period was measured by recording the pendulum for for 3 swings and dividing the total time by 3, taking its maximum height as the reference point to reduce uncertainty in the weight's position (weight fastest at its minimum). The period uncertainty was taken to be $0.25\,\text{s}$, the average human reaction time \cite{reaction-time}, since it is greater than the uncertainty of the stopwatch ($0.05\,\text{s}$) used.
+
+All data collected were done without the need for tracking software.
 
 \subsection{Analysis}
 According to Section \ref{Background}, {\color{blue} if $|\theta| \lesssim 20^{\circ}$, then a line of best fit with slope 0 would be expected, which is observed to happen for the 4 closes points plotted from a release angle of $0^\circ$. However, as the release angle increases, the overall trend deviates from Equation \ref{eq:l-over-g} and takes on more of a parabolic shape which can be modelled by a quadratic power series, which corresponds to the best fit line from Figure \ref{fig:figure 1}:}
@@ -123,43 +126,31 @@ where $T_0$ represents the period, $\theta_0$ the release angle and $B$ and $C$ 
 
 The terms $B$ and $C$ are also significant because they describe the symmetry of parabola and how much it deviates from the trend described in Equation \ref{eq:l-over-g}. If $B$ does not equal 0, the parabola will not be centered at $\theta = 0$. Since the experimentally determined value of B is smaller than its uncertainty, it suffices to say that $B = 0$, which implies symmetry in the graph. On the other hand, if $C = 0$, then the line of best fit will have slope 0. However, this was determined experimentally to not be the case.
 
-
 Lastly, the residuals shown on the graph do not suggest much asymmetry regarding the pendulum as the negative release angles appear symmetrical when compared to positive release angles. However, a single-stringed pendulum tends to spin in an elliptical fashion when released, affecting accurate measurements.
 
 Thus, it can be concluded that the pendulum period depends on release angle.}
 
-\end{multicols}
-\newpage
-
 \section{Finding the Q Factor} \label{Finding the Q Factor}
 
 \subsection{Experimental Setup}
-{\color{blue}
-A single-stringed pendulum tends to spin in an elliptical fashion when released. Not only does this violate the way a pendulum was defined in Section \ref{Background}, elliptical orbits may also lead to inaccurate measurements. To correct for this,} a degree of freedom was removed from the pendulum by threading a string through the stainless steel quick link and fastening the 2 strings in 2 locations to form the shape of a ``V''. The pendulum would then swing back and forth in the plane perpendicular to the ``V'' {\color{blue} where the pivot lies directly above the string. Lego pieces were used to prevent the risk of the string slipping under the tape and a protractor was taped directly above the weight. Extra caution was taken to ensure that the center of the protractor aligned with the 2 intersection points between the string and the legos, which lined up with the camera lens. Shown below is a side and front view of the new setup:}
-\begin{figure}[!hptb]
+A single-stringed pendulum like the one presented in Section \ref{sec 3 period and release angle} tends to spin in an elliptical fashion when released, which violates the way a pendulum was defined in Section \ref{Background}. To correct for elliptical motion, a degree of freedom was removed from the pendulum by threading a string through the stainless steel quick link and fastening the threated string at 2 edge pivots to form the shape of a ``V''. This allows the pendulum to swing back and forth in the plane perpendicular to the ``V'' with the pivot point lying directly above the weight. Lego pieces clamped down on the string to prevent it from slipping, and a protractor was taped directly above the weight. Extra caution was taken to ensure that the protractor's center the edge pivots, and the camera lens were all aligned with each other. Shown below is a front view of the new setup:
+
+\begin{figure}[H]
     \centering
-    \begin{subfigure}{0.49\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/exp_setup3_angle.png}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.49\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/exp_setup3_front.png}
-    \end{subfigure}
-    \caption{\centering Improved version of the pendulum used to determine Q factor. Note: this is actually version 3 of the pendulum. Issues that arose with version 2 will be discussed later in this section. Version 2 was also double-stringed}
+    \includegraphics[width=\linewidth]{../figures/exp_setup3_front.png}
+    \caption{\centering Improved version of the pendulum used to determine Q factor. This is actually the third version. Issues that arose with the second version will be discussed later in this section.}
     \label{fig:figure 3}
 \end{figure}
-\newpage
+
 
 \subsection{Data}
 {\color{blue}
 The Q factor can be determined by plotting the amplitude-time graph, as shown below:
 }
 
-\begin{figure}[!hptb]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{../figures/max_amplitude_vs_time.png}
+    \includegraphics[width=\linewidth]{../figures/max_amplitude_vs_time.png}
     \caption{\centering Graph of maximum amplitude vs. time}
     \label{fig:figure 4}
 \end{figure}
@@ -169,18 +160,18 @@ The pendulum was released from an angle of approximately $20^\circ$ to ensure th
 
 To calculate the amplitudes, the length of the video was first divided into 15\,-\,20 equal intervals. For every interval, a few frames were advanced or reversed until the closest maximum amplitude could be determined.
 
-\newpage
 
-The uncertainty for each angle was measured in Tracker \cite{tracker} at the frame where $\theta$ reached a maximum. Due the double-stringed setup, two strings will appear in the frame. The angle was taken to be the midpoint of the region that the strings formed and the uncertainty half of the total angle of the region. An image of angle calculation is shown below:
+The uncertainty for each angle was measured in Tracker \cite{tracker} at the frame where $\theta$ reached a maximum. Due the double-stringed setup, two strings will appear in the frame. The angle was taken to be the midpoint of the region that the strings formed and the uncertainty half of the total angle of the region. An image of angle calculation is shown below:}
 
-\begin{figure}[!hptb]
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{../figures/tracker.png}
+    \includegraphics[width=\linewidth]{../figures/tracker.png}
     \caption{\centering Angle determination in Tracker. The red and blue diamonds represents the upper and lower bound of the angle, represented in xy coordinates relative to the pink axes, which can be converted to angles.}
     \label{fig:figure5}
 \end{figure}
 
-By using Tracker, }the uncertainty for period can be decreased from 0.25\,s to 0.03\,s, which equals to the frame rate. This is because Tracker allows the frame-by-frame playback and pausing of a video, especially at a maximum amplitude. {\color{blue}Period itself is measured by converting the number of frames taken for 5 swings into seconds, and dividing that number by 5.}
+By using Tracker, the uncertainty for period can be decreased from 0.25\,s to 0.03\,s, which equals to the frame rate. This is because Tracker allows the frame-by-frame playback and pausing of a video, especially at a maximum amplitude. {\color{blue}Period itself is measured by converting the number of frames taken for 5 swings into seconds, and dividing that number by 5.}
 
 Lastly, the uncertainty for time was taken to be {\color{blue}1/30} where {\color{blue}30} represents the frame rate (fps) of the video.
 
@@ -194,6 +185,8 @@ Another way of determining the Q factor is by counting the number of oscillation
 
 [i dont think i ever need this section anymore] When the amplitude $A(t)$ decays to $e^{-\pi}\,\%$ of its original amplitude, the rate at which $A(t)$ changes decreases significantly. Given the value of amplitude $A_Q$ that corresponds to the time $t_Q$ when $A(t_Q) = e^{-\pi}\theta_0$, a large range of Q factors will satisfy a region of $A(t)$ around $t_Q$ bounded by the uncertainty values of $A_Q$. Additionally, the exact value of $e^{-\pi}\theta_0$ may  not correspond to any of the amplitudes but rather some angle in between two peaks. For example, if $A_Q + 0.009 = A(t)$ (Angle uncertainty from Subsection \ref{subsec 3.2 Data}), $t = 465\,\text{s}$, and if $A_Q - 0.009 = A(t)$, $t = 651\,\text{s}$. Thus, an upper and lower bound for $t_Q = 534\,\text{s}$, has been defined. Thus, Q and its uncertainty can then be found by dividing by the period and taking the larger percent uncertianties of both bounds, resulting in $Q = 480 \pm 90$ using the counting method.
 SHEEESH the q factor and the counting method are pretty accurate (in terms of raw value) -> this implies that tracking pendulum this was is not flawed.
+
+
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -221,21 +214,17 @@ The length of the pendulum was measured by taking the distance from the pivot po
 
 For all lenghts, angles were released from approximately $20^\circ$ to satisfy the behaviour of a simple pendulum.
 
-\newpage
-
 \subsection{Data}
 Plotting period against length reveals a square root-like trend, which is reminiscent of Equation \ref{eq:l-over-g}. Plotting the line of best fit gives:
 
-\begin{figure}[!hptb]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{../figures/period_vs_length.png}
+    \includegraphics[width=\linewidth]{../figures/period_vs_length.png}
     \caption{\centering Graph of pendulum period plotted against pendulum length}
     \label{fig:figure 6}
 \end{figure}
 
 The uncertainty for length (0.1\,cm) was taken to be twice the smallest increment of a tape measure since a double-ended measurement was used to determine pendulum length. As in previous sections, the uncertainty for a period was taken to be 1/30\,s.
-
-\newpage
 
 \subsection{Analysis}
 Equation \ref{eq:l-over-g} can also be represented in the form of $T = AL^n$ where $A = 2\pi/\sqrt{g} \approx 2$ and $n = 0.5$. This equation is displayed as the line of best fit in Figure \ref{fig:figure 6}, which also determines the uncertainty of $A = 0.01$ and $n = 0.004$.
@@ -244,9 +233,9 @@ The $r^2$ value for this fit, combined with consistent and low residuals implies
 
 To further prove that the line of best fit represents a square root function, Figure \ref{fig:figure 6} may be replotted with a log-log graph, shown below:
 
-\begin{figure}[!hptb]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{../figures/period_vs_length_log.png}
+    \includegraphics[width=\linewidth]{../figures/period_vs_length_log.png}
     \caption[]{Figure \ref{fig:figure 6} plotted with a log-log graph}
     \label{fig:figure 7}
 \end{figure}
@@ -258,14 +247,12 @@ Given Equation \ref{eq:l-over-g}, taking log on both sides results in an equatio
 \subsection{Experimental Setup}
 The same setup from Section \ref{Finding the Q Factor} was used to calculate the Q factors. Videos of the pendulum were not just recorded to include a few swings for Section \ref{Period and Length}, but rather up to hundreds of swings to capture the complete dampening effect of the pendulum.
 
-\newpage
-
 \subsection{Data}
 The Q factor for every length was calculated by using Equation \ref{eq:q-factor-formula} with generated values of $\tau$ and $T$ as demonstrated in Section \ref{Finding the Q Factor} because the uncertainty is smaller in general. the Q factors for all 9 lengths is shown below with a line of best fit:
 
-\begin{figure}[!hptb]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{../figures/qfactor_vs_length.png}
+    \includegraphics[width=\linewidth]{../figures/qfactor_vs_length.png}
     \caption{\centering Graph of Q factor plotted against pendulum length}
     \label{fig:figure 8}
 \end{figure}
@@ -283,6 +270,8 @@ Unfortunately, it cannot be concluded that \ref{eq:crit-damp} is the correct mod
 }
 
 \newpage
+
+\end{multicols}
 
 \printbibliography[heading=bibintoc]
 
@@ -355,12 +344,5 @@ Thus, the final equation for Q factor is represented by the equation
 \end{align}
 
 where $d_1$, $d_2$, and $d_3$ are new constants after dividing the top and bottom by $c_4$.
-
-
-
-
-
-
-
 
 \end{document}

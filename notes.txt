@@ -1,6 +1,14 @@
 rounds of double checking
 ========================================
 
+introduce the data
+present details on collecting strategies
+
+loop:
+
+    present uncertainty
+
+
 center of mass is at the center to align with the string
 
 discuss how largest uncertainty in experiment could be improved on in the future (implicitly mentioning future work)
