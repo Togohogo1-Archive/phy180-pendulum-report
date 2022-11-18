@@ -70,11 +70,11 @@ where:
 {
 \setlength{\abovedisplayskip}{2.5pt}
 \begin{flalign*}
-    \quad \theta_0 &= \text{initial release angle in rad} & \\ % \\[-3pt] for paragraphs
-    % \quad &\phantom{{}={}} \text{ayo continuation br}\\
-    \quad T &= \text{pendulum's period in s} & \\
-    \quad \phi_0 &= \text{angular phase shift in rad} & \\
-    \quad \tau &= \text{decay constant governing damping} &
+    \qquad \theta_0 &= \text{initial release angle in rad} & \\ % \\[-3pt] for paragraphs
+    % \qqquad &\phantom{{}={}} \text{ayo continuation br}\\
+    \qquad T &= \text{pendulum's period in s} & \\
+    \qquad \phi_0 &= \text{angular phase shift in rad} & \\
+    \qquad \tau &= \text{decay constant governing damping} &
 \end{flalign*}
 }
 
@@ -117,7 +117,7 @@ In total, the weight was released from 8 angles on both sides of the $0^{\circ}$
 
 All data collected were done without the need for tracking software.
 
-\subsection{Analysis}
+\subsection{Analysis} \label{sec 3.2 analysis}
 Qualitatively, the pendulum period stays relatively constant for small release angles. As release angle increases, the period deviates from the trend suggested by Equation \ref{eq:l-over-g} for large angles, taking on a symmetric parabolic shape. Thus, a quadratic power series can be used to model this relationship, corresponding to the best-fit line from Figure \ref{fig:figure 2}
 \begin{equation} \label{eq:power series}
    T =  T_0(1 + B\theta_0 + C\theta_0^2)
@@ -126,10 +126,10 @@ where:
 {
 \setlength{\abovedisplayskip}{2.5pt}
 \begin{flalign*}
-    \theta_0 &= \text{release angle in rad}\\
-    T_0 &= \text{smallest measured period}, (4.40\pm0.03)\,\text{s} \\
-    B &= \text{constant for symmetry}, -0.001\pm0.005\\
-    C &= \text{constant for deviation}, 0.091\pm0.007
+    \qquad \theta_0 &= \text{release angle in rad} & \\
+    \qquad T_0 &= \text{smallest measured period}, (4.40\pm0.03)\,\text{s} & \\
+    \qquad B &= \text{constant for symmetry}, -0.001\pm0.005 & \\
+    \qquad C &= \text{constant for deviation}, 0.091\pm0.007 &
 \end{flalign*}
 }
 
@@ -178,9 +178,25 @@ The value for each amplitude was measured in Tracker \cite{tracker} at the frame
 
 The uncertainty for time was taken to be 1/30 since the video was captured at 30 frames per second.
 
-Although not plotted in the graph, the period is also needed for Q factor calculation. Using Tracker, period was measured by converting the number of frames taken for 5 swings into seconds, then dividing that value by 5. The uncertainty for period can then be reduced from 0.25\,s to 0.03\,s (same as time uncertainty) because Tracker allows the frame-by-frame playback and pausing of a video.
+Although not plotted in the graph, the period is also needed for Q factor calculation. Using Tracker, period was measured by converting the number of frames taken for 5 swings into seconds, then dividing that value by 5. The uncertainty for period can then be reduced from 0.25\,s to 0.03\,s (same as time uncertainty) because Tracker allows the frame-by-frame playback and pausing of a video. For this specific setup, $T = (1.11 \pm 0.03)$\,s.
 
 \subsection{Analysis}
+The best-fit equation in Figure \ref{fig:figure 4} is modelled by Equation \ref{eq:amplitude-function} where:
+{
+\setlength{\abovedisplayskip}{2.5pt}
+\begin{flalign*}
+    \qquad \theta_0 &= 0.405 \pm 0.004 &
+    \qquad \tau &= (170 \pm 2)\,\text{rad} & \\
+\end{flalign*}
+}
+
+Following a similar analysis to that of Section \ref{sec 3.2 analysis}, the calculated value for $\theta_0$ falls within the range of the measured value for $\theta_0$. Additionally, the very high $r^2$ value combined with small and consistent residuals suggests that damped harmonic motion, the model used in Equation \ref{eq:amplitude-function}, provides a good fit for the data.
+
+
+
+
+
+
 {\color{blue}
 The best fit equation in Figure \ref{fig:figure 4} is modelled by Equation \ref{eq:amplitude-function}. The uncertainty for $\theta_0 = 0.004$ and $\tau = 2$. Simply observing the graph reveals a plausible for the the data. This is reinforced by the high $r^2$ value and small and consistent residuals.
 
