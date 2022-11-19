@@ -90,6 +90,10 @@ In order to quantify a pendulum's damping, its Q factor may be used. The Q facto
 
 The Q factor is also defined by the amount of oscillations it takes for the pendulum's amplitude to decay to $e^{-\pi} \approx 4\%$ of its original amplitude during release. Qualitatively, when the Q factor is large, the pendulum comes to rest slower. When the Q factor is small, the pendulum comes to rest quicker.
 
+{\color{blue}
+    Lastly, air resistnace model can be added, which is separate from frictional force.
+}
+
 \section{Period and Release Angle} \label{sec 3 period and release angle}
 
 \subsection{Experimental Setup}
@@ -139,7 +143,7 @@ By inspection, the calculated value of $T_0$ falls within the uncertainty range 
 
 Given that the $r^2$ value is relatively close to 1, the residuals are both small and consistent, and the graph passes passes through all error bars, this fit would be a valid representation of the trend, suggesting that the pendulum period depends on release angle.
 
-\section{Finding the Q Factor} \label{Finding the Q Factor}
+\section{Finding the Q Factor} \label{sec 4 Finding the Q Factor}
 
 \subsection{Experimental Setup}
 A single-stringed pendulum like the one presented in Section \ref{sec 3 period and release angle} tends to spin in an elliptical fashion when released, which violates the way a pendulum was defined in Section \ref{Background}. To correct for elliptical motion, a degree of freedom was removed from the pendulum by threading a string through the stainless steel quick link and fastening the threated string at 2 edge pivots to form the shape of a ``V''. This allows the pendulum to swing back and forth in the plane perpendicular to the ``V'' with the pivot point lying directly above the weight. Lego pieces clamped down on the string to prevent it from slipping, and a protractor was taped directly above the weight. Extra caution was taken to ensure that the protractor's center the edge pivots, and the camera lens were all aligned with each other. Shown below is a front view of the new setup:
@@ -152,7 +156,7 @@ A single-stringed pendulum like the one presented in Section \ref{sec 3 period a
 \end{figure}
 
 
-\subsection{Data}
+\subsection{Data} \label{sec 4.2 data}
 The Q factor can be determined by plotting
  data collected for the amplitude vs. time graph, as shown below:
 
@@ -200,20 +204,23 @@ Let $\theta_Q$ represent the amplitude at which the initial release angle decays
 
 Although both methods yield the same value for Q factor, the counting method is not preferred due to the large uncertainty. The reason for this large uncertainty is attributed to the small rate of change of the exponential function $A(x)$ large values of $t$.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Lab 2 content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Period and Length} \label{Period and Length}
 
 \subsection{Experimental Setup}
-The same pendulum in Figure \ref{fig:figure 3} was used to collect data for 9 different lengths ranging from around $10\,$cm to $50\,$cm.
+The same pendulum and experimental setup in section \ref{sec 4 Finding the Q Factor} Figure \ref{fig:figure 3} was used to collect data for 9 different lengths ranging from around $10\,$cm to $50\,$cm.
 
-{\color{blue}
-The angle formed by the ``V'' shape was kept to be around $60^\circ$ for all lengths, which is important in making sure that any dependent variable under investigation will only depend on one independent variable, the length of the pendulum.
+The angle formed by the ``V'' shape was kept at $60^\circ$ for all lengths due to ease of setup between trials and also making sure that the dependent variable under investigation (period), will only depend on one independent variable (length).
 
-The length of the pendulum was measured by taking the distance from the pivot point to the center of mass of the weight, approximated to be located at the center of the stainless steel quick link. This value was taken to be the average of the distance from the pivot point to the top of the weight and the distance from the pivot point to the bottom of the weight.
+The length of the pendulum was measured by taking the distance from the pivot point to the weight's center of mass, approximated to be at the center of the stainless steel quick link. Thus, length was taken to be the average of the distance from the pivot point to the top of the weight and the distance from the pivot point to the bottom of the weight.
 
 For all lenghts, angles were released from approximately $20^\circ$ to satisfy the behaviour of a simple pendulum.
 
 \subsection{Data}
-Plotting period against length reveals a square root-like trend, which is reminiscent of Equation \ref{eq:l-over-g}. Plotting the line of best fit gives:
+The data collected for the period vs. length graph is shown below:
 
 \begin{figure}[H]
     \centering
@@ -222,14 +229,28 @@ Plotting period against length reveals a square root-like trend, which is remini
     \label{fig:figure 6}
 \end{figure}
 
-The uncertainty for length (0.1\,cm) was taken to be twice the smallest increment of a tape measure since a double-ended measurement was used to determine pendulum length. As in previous sections, the uncertainty for a period was taken to be 1/30\,s.
+A tape measure was used to measure the pendulum's length. However, the uncertainty was taken to be double the smallest increment (0.05\,cm) of the tape measure since a double-eneded measurement was used. As in Section \ref{sec 4.2 data}, the period uncertainty was taken to be 1/30\,s since the same recording device was used
+
+{\color{blue}
+reference another section for period measurement
+}
+
 
 \subsection{Analysis}
-Equation \ref{eq:l-over-g} can also be represented in the form of $T = AL^n$ where $A = 2\pi/\sqrt{g} \approx 2$ and $n = 0.5$. This equation is displayed as the line of best fit in Figure \ref{fig:figure 6}, which also determines the uncertainty of $A = 0.01$ and $n = 0.004$.
+The best-fit equation in Figure \ref{fig:figure 6} is modelled by modified version of Equation \ref{eq:l-over-g} where:
+{
+\setlength{\abovedisplayskip}{2.5pt}
+\begin{flalign*}
+    \qquad A &= 2.00 \pm 0.01 \approx 2\pi/\sqrt{g}& \\ % \\[-3pt] for paragraphs
+    % \qqquad &\phantom{{}={}} \text{ayo continuation br}\\
+    \qquad n &= 0.483 \pm 0.004 &
+\end{flalign*}
+}
 
-The $r^2$ value for this fit, combined with consistent and low residuals implies that for small angles, the relationship between period and length is governed by Equation \ref{eq:l-over-g}.
+Given the 3\% difference from the fitted $n$ with the actual $n$, the very high $r^2$ value for the fit, and the consistent and low residuals implies that for small angles, the relationship between period and length is governed by Equation \ref{eq:l-over-g}.
 
-To further prove that the line of best fit represents a square root function, Figure \ref{fig:figure 6} may be replotted with a log-log graph, shown below:
+
+To further prove that the line of best fit represents a square root function, Figure \ref{fig:figure 6} is replotted with a log-log graph, shown below:
 
 \begin{figure}[H]
     \centering
@@ -238,15 +259,17 @@ To further prove that the line of best fit represents a square root function, Fi
     \label{fig:figure 7}
 \end{figure}
 
-Given Equation \ref{eq:l-over-g}, taking log on both sides results in an equation in the form of $y = mx + b$ where the slope of the line $m$ equals to the power $n$. Plotting on a logarithmic axis provides a useful way to analyze functions that obey a power law, where the adjusted line of best fit should look linear, as expected in Figure \ref{fig:figure 7} reinforcing the idea that Equation \ref{eq:l-over-g} is an accurate way of representing the relationship between pendulum period and length.
+Taking log on both sides of Equation \ref{eq:l-over-g} results in an equation in the form of $y = mx + b$ where the slope of the line $m$ equals to the power $n$. Plotting on a logarithmic axis provides a useful way to analyze functions that obey a power law, revealing a linear graph as demonstrated by Figure \ref{fig:figure 7}. This reinforces the idea that Equation \ref{eq:l-over-g} is an accurate way of modelling the relationship between pendulum period and length.
+
+{\color{blue}
 
 \section{Q Factor and Length}
 
 \subsection{Experimental Setup}
-The same setup from Section \ref{Finding the Q Factor} was used to calculate the Q factors. Videos of the pendulum were not just recorded to include a few swings for Section \ref{Period and Length}, but rather up to hundreds of swings to capture the complete dampening effect of the pendulum.
+The same setup from Section \ref{sec 4 Finding the Q Factor} was used to calculate the Q factors. Videos of the pendulum were not just recorded to include a few swings for Section \ref{Period and Length}, but rather up to hundreds of swings to capture the complete dampening effect of the pendulum.
 
 \subsection{Data}
-The Q factor for every length was calculated by using Equation \ref{eq:q-factor-formula} with generated values of $\tau$ and $T$ as demonstrated in Section \ref{Finding the Q Factor} because the uncertainty is smaller in general. the Q factors for all 9 lengths is shown below with a line of best fit:
+The Q factor for every length was calculated by using Equation \ref{eq:q-factor-formula} with generated values of $\tau$ and $T$ as demonstrated in Section \ref{sec 4 Finding the Q Factor} because the uncertainty is smaller in general. the Q factors for all 9 lengths is shown below with a line of best fit:
 
 \begin{figure}[H]
     \centering
@@ -258,7 +281,7 @@ The Q factor for every length was calculated by using Equation \ref{eq:q-factor-
 \subsection{Analysis}
 The Q factor seems to peak at a certain point, which could be explained by the following. When the pendulum length is small, the force of air resistance plays less of a role than the force of friction at the end of the string and within the string fibers. When the pendulum length is long, the force of air resistance plays more of a role than all forces of friction within the string. This is because for a longer string released at the same angle as a smaller string, more gravitational potential energy gets converted to kinetic energy, implying a higher speed and even higher force of drag since its porportional to $v^2$ \cite{airdrag}. Additionally, the weight of the string starts to not be negligible when the pendulum length is long, as the pendulum stop behaving like a simple pendulum and the string also contributes to a surface area that experiences drag.
 
-Modelling the Q factor graph in terms of a exponential, quadratic, sinusoidal, or power law function makes zero sense because intuitively, the Q factor should be 0 when the string length equals 0, and the Q factor should approach 0 when the string length is extremely long. A function that seems to satisfy these constraints is given by\footnote{a full derivation for this equation is found in the appendix}
+Modelling the Q factor graph in terms of a exponential, quadratic, sinusoidal, or power law function makes zero sense because intuitively, the Q factor should be 0 when the string length equals 0, and the Q factor should approach 0 when the string length is extremely long. A function that seems to satisfy these constraints is given by
 \begin{equation} \label{eq:crit-damp}
     Axe^{-bx}
 \end{equation}
