@@ -83,7 +83,8 @@ for i in range(1, 10):
         per_u_a = u_a/a
         per_u_tau = u_tau/tau
         Q = np.pi*tau/T
-        print("Q factor:", Q, "+/-", max(1/30, per_u_tau)*Q)
+        print(T)
+        print("Q factor:", Q, "+/-", max((1/30)/T, per_u_tau)*Q)
         print()
 
         residual = ydata - my_func(xdata, *popt)
@@ -94,7 +95,7 @@ for i in range(1, 10):
         ax2.set_title("Residuals of the fit")
 
         fig.tight_layout()
-        plt.show()
+        # plt.show()
         fig.savefig("graph.png")
 
         return None
