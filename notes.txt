@@ -1,4 +1,6 @@
+
 rounds of double checking
+- Section 3 vs 3.2
 ========================================
 
 where: put or odnt put colon moment
@@ -14,11 +16,6 @@ loop:
 center of mass is at the center to align with the string
 
 discuss how largest uncertainty in experiment could be improved on in the future (implicitly mentioning future work)
-
-gotta make it more clear about uncertainties w smth like this:
-- t_0 represnets ..., measured to be x+dx
-- B represents ..., measured to be y+dy
-- C represents ..., measured to be z+dz
 
 units for time and other final results in equations
 
