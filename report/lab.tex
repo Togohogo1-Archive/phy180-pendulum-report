@@ -103,7 +103,7 @@ The initial setup for the pendulum was made by first taping a protractor on a de
 \end{figure}
 
 
-\subsection{Data} \label{subsec 3.2 Data}
+\subsection{Data} \label{sec 3.2 Data}
 The data collected for the period vs. release angle graph is shown below:
 
 \begin{figure}[H]
@@ -117,7 +117,7 @@ In total, the weight was released from 8 angles on both sides of the $0^{\circ}$
 
 All data collected were done without the need for tracking software.
 
-\subsection{Analysis} \label{sec 3.2 analysis}
+\subsection{Analysis} \label{sec 3.3 analysis}
 Qualitatively, the pendulum period stays relatively constant for small release angles. As release angle increases, the period deviates from the trend suggested by Equation \ref{eq:l-over-g} for large angles, taking on a symmetric parabolic shape. Thus, a quadratic power series can be used to model this relationship, corresponding to the best-fit line from Figure \ref{fig:figure 2}
 \begin{equation} \label{eq:power series}
    T =  T_0(1 + B\theta_0 + C\theta_0^2)
@@ -185,29 +185,20 @@ The best-fit equation in Figure \ref{fig:figure 4} is modelled by Equation \ref{
 {
 \setlength{\abovedisplayskip}{2.5pt}
 \begin{flalign*}
-    \qquad \theta_0 &= 0.405 \pm 0.004 &
-    \qquad \tau &= (170 \pm 2)\,\text{rad} & \\
+    \qquad \theta_0 &= (0.405 \pm 0.004)\,\text{rad} & \\
+    \qquad \tau &= 170 \pm 2&
 \end{flalign*}
 }
 
-Following a similar analysis to that of Section \ref{sec 3.2 analysis}, the calculated value for $\theta_0$ falls within the range of the measured value for $\theta_0$. Additionally, the very high $r^2$ value combined with small and consistent residuals suggests that damped harmonic motion, the model used in Equation \ref{eq:amplitude-function}, provides a good fit for the data.
+Following a similar analysis to that of Section \ref{sec 3.3 analysis}, the calculated value for $\theta_0$ falls within the range of the measured value for $\theta_0$. Additionally, the very high $r^2$ value combined with small and consistent residuals suggests that damped harmonic motion, the model used in Equation \ref{eq:amplitude-function}, provides a good fit for the data.
 
+Given Equation \ref{eq:q-factor-formula} and a  value for $T$ and $\tau$ with their uncertainties, the $Q$ factor is calculated to be $480 \pm 5$, with its uncertainty taking on the higher percent uncertainty of $T$ and $\tau$.
 
+Another way of determining the Q factor is by counting the number of oscillations as outlined in Section \ref{Background}.
 
+Let $\theta_Q$ represent the amplitude at which the initial release angle decays to $e^{-\pi}\theta_0$. When $A(x) = \theta_Q$, $t_Q = 534\,\text{s}$ seconds have elapsed, meaning $A(t_Q) = \theta_Q$. However, $\theta_Q$ carries an uncertainty of 0.009\,rad (Subsection \ref{sec 3.2 Data}), meaning $t_Q$ is bounded. When $A(x) = \theta_Q + 0.009$, $t_Q = 465\,\text{s}$ and when $A(x) = \theta_Q - 0.009$, $t_Q = 651\,\text{s}$. The uncertainty for $t_Q$ can be taken to be the larger difference from both bounds. This, the uncertainty for Q factor by counting oscillations is found by taking the larger uncertainty between $t_Q$ and $T$, resulting in $Q = 480 \pm 90$.
 
-
-
-{\color{blue}
-The best fit equation in Figure \ref{fig:figure 4} is modelled by Equation \ref{eq:amplitude-function}. The uncertainty for $\theta_0 = 0.004$ and $\tau = 2$. Simply observing the graph reveals a plausible for the the data. This is reinforced by the high $r^2$ value and small and consistent residuals.
-
-Given Equation \ref{eq:q-factor-formula}, $T = 1.11 \pm 0.03$ for this pendulum length and $\tau = 170$, the Q factor is calculated to be $480 \pm 5$, taking on the higher percent uncertainty of $T$ and $\tau$.
-Another way of determining the Q factor is by counting the number of oscillations as outlined in Section \ref{Background}. However, this method of determining the Q factor is suboptimal due to the nature of the exponential decay function.
-
-[i dont think i ever need this section anymore] When the amplitude $A(t)$ decays to $e^{-\pi}\,\%$ of its original amplitude, the rate at which $A(t)$ changes decreases significantly. Given the value of amplitude $A_Q$ that corresponds to the time $t_Q$ when $A(t_Q) = e^{-\pi}\theta_0$, a large range of Q factors will satisfy a region of $A(t)$ around $t_Q$ bounded by the uncertainty values of $A_Q$. Additionally, the exact value of $e^{-\pi}\theta_0$ may  not correspond to any of the amplitudes but rather some angle in between two peaks. For example, if $A_Q + 0.009 = A(t)$ (Angle uncertainty from Subsection \ref{subsec 3.2 Data}), $t = 465\,\text{s}$, and if $A_Q - 0.009 = A(t)$, $t = 651\,\text{s}$. Thus, an upper and lower bound for $t_Q = 534\,\text{s}$, has been defined. Thus, Q and its uncertainty can then be found by dividing by the period and taking the larger percent uncertianties of both bounds, resulting in $Q = 480 \pm 90$ using the counting method.
-SHEEESH the q factor and the counting method are pretty accurate (in terms of raw value) -> this implies that tracking pendulum this was is not flawed.
-
-
-}
+Although both methods yield the same value for Q factor, the counting method is not preferred due to the large uncertainty. The reason for this large uncertainty is attributed to the small rate of change of the exponential function $A(x)$ large values of $t$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
