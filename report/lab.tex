@@ -271,11 +271,8 @@ Taking log on both sides of Equation \ref{eq:l-over-g} turns it into the form of
 \subsection{Experimental Setup}
 The same setup from Section \ref{sec 4 Finding the Q Factor} and the same lengths from Section \ref{sec 5 period and length} were used to collect data for Q factor calculation.
 
-
 \subsection{Data}
-The data collected for Q factor vs length is shown below:
-
-The Q factor for every length was calculated by using Equation \ref{eq:q-factor-formula} with generated values of $\tau$ and $T$ as demonstrated in Section \ref{sec 4 Finding the Q Factor} because the uncertainty is smaller in general. the Q factors for all 9 lengths is shown below with a line of best fit:
+The Q factor for every length was calculated by using Equation \ref{eq:q-factor-formula} with generated values of $\tau$ and $T$ as demonstrated in Section \ref{sec 4 Finding the Q Factor} because the uncertainty is smaller in general. The Q factor plot for all 9 lengths is shown below:
 
 \begin{figure}[H]
     \centering
@@ -284,13 +281,13 @@ The Q factor for every length was calculated by using Equation \ref{eq:q-factor-
     \label{fig:figure 8}
 \end{figure}
 
-Calculations for each length and its uncertainty was outlined in Section \ref{sec 5 period and length}. The Q factors and their uncertainties for each length was calculated by using Equation \ref{eq:q-factor-formula} instead of the counting method to reduce uncertainty.
+Calculations for each length and their uncertainties were  outlined in Section \ref{sec 5 period and length}. The Q factors and their uncertainties were calculated by using Equation \ref{eq:q-factor-formula} since it was determined to be more optimal than the counting method.
 
 \subsection{Analysis} \label{sec 6.3 analysis}
-Unlike previous graphs, the Q factor seems to be a lot more erratic. This results in a best-fit line that doesn't fit nearly as perfect, as suggested by the somewhat low $r^2$ value, and residuals that are both large and inconsistent. However a general increasing-decreasing trend can be identified. Starting from with a pendulum length of 10\,cm, the Q factor increases until a maximum in between lengths of 25\,cm-30\,cm then decreases as length increases to 50\,cm. This phenomenon could be explained with Equation \ref{eq:propto v} and Equation \ref{eq:propto v2}.
+Unlike previous graphs, the Q factor plot seems to be a lot more erratic. This results in a best-fit line that does not fit nearly as perfect, suggested by the somewhat low $r^2$ value, and residuals that are both large and inconsistent. However a general increasing-decreasing trend can be identified, with the Q factor peaking at a certain value. Starting with a pendulum length of 10\,cm, the Q factor increases until a maximum in between lengths of 25\,cm-30\,cm then decreases as length increases to 50\,cm. This phenomenon could be explained with Equation \ref{eq:propto v} and Equation \ref{eq:propto v2} as follows.
 
-At any length, $F_p$ and $F_d$ are always acting on the pendulum. However, the way in which they increase differs as length increase. If $F_p = c_1v$ and $F_d = c_2Av^2$ and, these two curves are guaranteed to intersect for some pendulum length. Therefore, towards the left of the intersection point is where $F_p$ dominates ($F_p > F_d$), indicated by the increasing behaviour and towards the right $F_d$ dominates ($F_p < F_d$), indicated by the decreasing behaviour.
-A longer string released at the same angle in comparison to a shorter string will store more gravitational potential energy to be converted to kinetic energy, implying higher tangential velocity. Additionally, a longer string also increases the total surface area subjected to drag
+At any length, $F_p$ and $F_d$ are always acting on the pendulum. However, the way in which they increase differs as length increase. If $F_p = c_1v$ and $F_d = c_2Av^2$, these two curves are guaranteed to intersect for some pendulum length. Therefore, towards the left of the intersection point is where $F_p$ dominates ($F_p > F_d$), indicated by the increasing behaviour and towards the right $F_d$ dominates ($F_p < F_d$), indicated by the decreasing behaviour.
+A longer string released at the same angle in comparison to a shorter string will store more gravitational potential energy to be converted to kinetic energy, implying higher tangential velocity. Additionally, a longer string also increases the total surface area subjected to drag.
 
 Modelling the Q factor graph in terms of an exponential, quadratic, sinusoidal, or power law function makes zero sense because intuitively, the Q factor should be 0 when the string length equals 0, and the Q factor should approach 0 when the string length approaches infinity. A function that seems to satisfy these constraints, used as the curve of best-fit for Figure \ref{fig:figure 8} is given by:
 \begin{equation} \label{eq:crit-damp}
@@ -302,11 +299,11 @@ for $x > 0$ where:
 \begin{flalign*}
     \qquad A &= 49 \pm 3 & \\ % \\[-3pt] for paragraphs
     % \qqquad &\phantom{{}={}} \text{ayo continuation br}\\
-    \qquad B &= 0.037 \pm 0.001 &
+    \qquad b &= 0.037 \pm 0.001 &
 \end{flalign*}
 }
 
-which comes from the general shape of a critically damped oscillating system \cite{crit-damping}.
+\noindent which comes from the general shape of a critically damped oscillating system \cite{crit-damping}.
 
 Due to the use of intuition, it cannot be concluded that Equation \ref{eq:crit-damp} is the correct relationship between Q factor and length, but it serves as a decent model in explaining how Q factor definitely depends on pendulum length.
 

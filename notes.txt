@@ -14,5 +14,7 @@ rounds of double checking
 - $Q$
 - colon for figures
 - more detailed analysis for figures
+- don't, contractinos, etc.
+- variables match equation in where: ...
 
 remove redundant definition for center of mass
