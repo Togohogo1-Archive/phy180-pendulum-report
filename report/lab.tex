@@ -33,10 +33,10 @@
 
 \begin{multicols}{2}
 \section{Introduction}
-The purpose of this lab report is to evaluate the accuracy of various theoretical models used to predict the behaviour of a simple pendulum and their implications. Experiments demonstrate that there exists a relationship between period and release angle, amplitude and time, period and length, and Q factor and length. The following section presents all the theoretical background that these relationships are build on.
+The purpose of this lab report is to evaluate the accuracy of various theoretical models used to predict the behaviour of a simple pendulum. Experiments demonstrate that there exists a relationship between period and release angle, amplitude and time, period and length, and Q factor and length. The following section presents all the theoretical background that these relationships are built upon.
 
 \section{Background} \label{Background}
-A simple pendulum can be defined as a weight suspended via a flexible string, below a pivot point to which it swings back and forth freely along a plane that contains the pivot point. The length of the pendulum is defined as the distance from the pivot point to the weight's center of mass. The following equation is used to describe the simple pendulum released from an angle $\theta$, provided that the mass of the string is negligible compared to the mass of the weight:
+A simple pendulum can be defined as a weight suspended via a flexible string, below a pivot point to which it swings back and forth freely along a plane that contains the pivot point. The length of the pendulum is defined as the distance from the pivot point to the weight's center of mass. The following equation is used to describe a simple pendulum released from an angle $\theta$, provided that the mass of the string is negligible compared to the mass of the weight:
 \begin{equation} \label{eq:l-over-g}
     T = 2\pi \sqrt{\frac{L}{g}}
 \end{equation}
@@ -64,13 +64,14 @@ where the solution $\theta(t)$ cannot be easily represented in terms of elementa
 \end{align}
 
 
-Equation \ref{eq:power-series-derived} essentially equals Equation \ref{eq:l-over-g} when $\theta$ is extremely small. This is known as the small angle approximation of a pendulum and it holds (implying simple harmonic motion also holds) for \cite{the-simple-pendulum}
+It is observed that Equation \ref{eq:power-series-derived} equals Equation \ref{eq:l-over-g} when $\theta$ is extremely small. This is known as the small angle approximation of a pendulum and it holds (implying simple harmonic motion also holds) for \cite{the-simple-pendulum}:
 \begin{equation} \label{eq:small-angle-approx}
     |\theta| \lesssim 20^{\circ}
 \end{equation}
-When $\theta$ is in this range, $\sin\theta \approx \theta$. Additionally, all previous models demonstrate that pendulum period does not depends on mass of the weight.
 
-Another way to realistically model a pendulum is to incorporate dampening from frictional forces given by the following equation \cite{damped-oscillations}
+Additionally, all previous models demonstrate that pendulum period does not depends on mass of the weight.
+
+Another way to realistically model a pendulum is to incorporate dampening from frictional forces given by the following equation \cite{damped-oscillations}:
 \begin{equation} \label{eq:damped-harmonic-oscillator}
     \theta(t) = \theta_0 e^{-{t/\tau}} \cos\left(2\pi\frac{t}{T} + \phi_0\right)
 \end{equation}
@@ -95,13 +96,13 @@ In order to quantify a pendulum's damping, its Q factor may be used. The Q facto
     Q = \pi\frac{\tau}{T}
 \end{equation}
 
-The Q factor is also defined by the amount of oscillations it takes for the pendulum's amplitude to decay to $e^{-\pi} \approx 4\%$ of its original amplitude during release. Qualitatively, when the Q factor is large, the pendulum comes to rest slower. When the Q factor is small, the pendulum comes to rest quicker.
+The Q factor is also defined by the amount of oscillations it takes for a pendulum's amplitude to decay to $e^{-\pi} \approx 4\%$ of its release angle (initial amplitude). Qualitatively, when the Q factor is large, the pendulum comes to rest slower. When the Q factor is small, the pendulum comes to rest quicker.
 
-Lastly, a model which separates air resistance with string friction may also be defined. That is, the frictional force at the pivot is assumed to be proportional to angular velocity in the simplest case \cite{duke-pendulum}. Given that $\frac{d\theta}{dt} = \omega = v/r$:
+Lastly, a model which separates air resistance with string friction may also be included. That is, the frictional force at the pivot is assumed to be proportional to angular velocity in the simplest case \cite{duke-pendulum}. Given that $\frac{d\theta}{dt} = \omega = v/r$:
 \begin{equation} \label{eq:propto v}
     F_p \propto v
 \end{equation}
-And air resistance is assumed to be proportional to the pendulum's cross sectional area and velocity squared \cite{airdrag}:
+and air resistance is assumed to be proportional to the pendulum's cross sectional area and velocity squared \cite{airdrag}:
 \begin{equation} \label{eq:propto v2}
     F_d \propto Av^2
 \end{equation}
@@ -109,7 +110,7 @@ And air resistance is assumed to be proportional to the pendulum's cross section
 \section{Period and Release Angle} \label{sec 3 period and release angle}
 
 \subsection{Experimental Setup}
-The initial setup for the pendulum was made by first taping a protractor on a desk. The weight was hanged by tying a piece of cotton string around a stainless steel quick link whose center of mass was aligned to the rope and the $90^{\circ}$ mark on the protractor. Extra tape was also used to reinforce the pivot point, made to be collinear with the $0^{\circ}$ and $180^{\circ}$ markings. An image of the experimental setup is shown below:
+The initial setup for the pendulum was made by first taping a protractor to the edge of a desk. The weight was hanged by tying a piece of cotton string around a stainless steel quick link that was aligned to match the $90^{\circ}$ mark on the protractor. Extra tape was also used to reinforce the pivot point, made to be collinear with the $0^{\circ}$ and $180^{\circ}$ markings. An image of the experimental setup is shown below:
 
 \begin{figure}[H]
     \centering
@@ -129,12 +130,12 @@ The data collected for the period vs. release angle graph is shown below:
     \label{fig:figure 2}
 \end{figure}
 
-In total, the weight was released from 8 angles on both sides of the $0^{\circ}$ mark, starting from $10^\circ$ and taking increments of $10^\circ$ up to $80^\circ$. The uncertainty for each release angle was taken to $0.5^{\circ}$, the smallest increment on the protractor (converted to radians on graph). The period was measured by recording the pendulum for for 3 swings and dividing the total time by 3, taking its maximum height as the reference point to reduce uncertainty in the weight's position (weight fastest at its minimum). The period uncertainty was taken to be $0.25\,\text{s}$, the average human reaction time \cite{reaction-time}, since it is greater than the uncertainty of the stopwatch ($0.05\,\text{s}$) used.
+In total, the weight was released from 8 angles on both sides relative to the $90^{\circ}$ mark, starting from $10^\circ$ and taking increments of $10^\circ$ up to $80^\circ$. The uncertainty for each release angle was taken to $0.5^{\circ}$, the smallest increment on the protractor (converted to radians on graph). The period was measured by observing the pendulum for 3 swings and dividing the total time by 3, taking its maximum height as the reference point to reduce uncertainty in the weight's position (weight fastest at its lowest point). The period uncertainty was taken to be $0.25\,\text{s}$, the average human reaction time \cite{reaction-time}, since it is greater than the uncertainty of the stopwatch ($0.05\,\text{s}$) used.
 
 All data collected were done without the need for tracking software.
 
 \subsection{Analysis} \label{sec 3.3 analysis}
-Qualitatively, the pendulum period stays relatively constant for small release angles. As release angle increases, the period deviates from the trend suggested by Equation \ref{eq:l-over-g} for large angles, taking on a symmetric parabolic shape. Thus, a quadratic power series can be used to model this relationship, corresponding to the best-fit line from Figure \ref{fig:figure 2}
+Qualitatively, the pendulum period stays relatively constant for small release angles. As release angle increases, the period deviates from the trend suggested by Equation \ref{eq:l-over-g}, taking on a symmetric, parabolic shape. Thus, a quadratic power series can be used to model this relationship, corresponding to the best-fit line from Figure \ref{fig:figure 2}:
 \begin{equation} \label{eq:power series}
    T =  T_0(1 + B\theta_0 + C\theta_0^2)
 \end{equation}
@@ -144,16 +145,16 @@ where:
 \begin{flalign*}
     \qquad \theta_0 &= \text{release angle in rad} & \\
     \qquad T_0 &= \text{smallest measured period}, (4.40\pm0.03)\,\text{s} & \\
-    \qquad B &= \text{constant for symmetry}, -0.001\pm0.005 & \\
-    \qquad C &= \text{constant for deviation}, 0.091\pm0.007 &
+    \qquad B &= -0.001\pm0.005 & \\
+    \qquad C &= 0.091\pm0.007 &
 \end{flalign*}
 }
 
 The uncertainties for unknown variables in the best-fit equation were calculated with a Python program.
 
-By inspection, the calculated value of $T_0$ falls within the uncertainty range of the experimental value of $T_0$ (period with a release angle of $10^{\circ}$). The terms $B$ and $C$ are also significant because they describe the symmetry of parabola and how much it deviates from the trend described in Equation \ref{eq:l-over-g}. If $B \neq 0$, the parabola will not be centered at $\theta = 0$. Since the experimentally determined value of B is smaller than its uncertainty, it suffices to say that $B = 0$, implying symmetry in the graph. On the other hand, if $C = 0$, then the line of best fit will have slope 0. However, this was determined experimentally to not be the case.
+By inspection, the calculated value of $T_0$ falls within the uncertainty range of the experimental value (period corresponding to release angle of $10^{\circ}$). The terms $B$ and $C$ are also significant because they describe the symmetry of parabola and how much it deviates from the trend described in Equation \ref{eq:l-over-g}. If $B \neq 0$, the parabola will not be centered at $\theta = 0$. Since the experimentally determined value of B is smaller than its uncertainty, it suffices to say that $B = 0$, implying symmetry in the graph. On the other hand, if $C = 0$, then the line of best-fit will have slope 0. However, this was determined experimentally to not be the case.
 
-Given that the $r^2$ value is relatively close to 1, the residuals are both small and consistent, and the graph passes passes through all error bars, this fit would be a valid representation of the trend, suggesting that the pendulum period depends on release angle.
+Given that the $r^2$ value is relatively close to 1, the residuals are both small and consistent, and the graph passes passes through all error bars, this fit would be a valid representation of the trend, implying that the pendulum period depends on release angle.
 
 \section{Finding the Q Factor} \label{sec 4 Finding the Q Factor}
 
@@ -292,7 +293,7 @@ Calculations for each length and its uncertainty was outlined in Section \ref{se
 \subsection{Analysis} \label{sec 6.3 analysis}
 Unlike previous graphs, the Q factor seems to be a lot more erratic. This results in a best-fit line that doesn't fit nearly as perfect, as suggested by the somewhat low $r^2$ value, and residuals that are both large and inconsistent. However a general increasing-decreasing trend can be identified. Starting from with a pendulum length of 10\,cm, the Q factor increases until a maximum in between lengths of 25\,cm-30\,cm then decreases as length increases to 50\,cm. This phenomenon could be explained with Equation \ref{eq:propto v} and Equation \ref{eq:propto v2}.
 
-At any length, $F_p$ and $F_d$ are always acting on the pendulum. However, the way in which they increase differs as length increase. If $F_p = c_1v$ and $F_d = c_2Av^2$ and, these two curves are guaranteed to intersect for some pendulum length. Therefore, towards the left of the intersection point is where $F_p$ dominates, indicated by the increasing behaviour and towards the right of the intersection point is where $F_d$ dominates, indicated by the decreasing behaviour.
+At any length, $F_p$ and $F_d$ are always acting on the pendulum. However, the way in which they increase differs as length increase. If $F_p = c_1v$ and $F_d = c_2Av^2$ and, these two curves are guaranteed to intersect for some pendulum length. Therefore, towards the left of the intersection point is where $F_p$ dominates ($F_p > F_d$), indicated by the increasing behaviour and towards the right $F_d$ dominates ($F_p < F_d$), indicated by the decreasing behaviour.
 A longer string released at the same angle in comparison to a shorter string will store more gravitational potential energy to be converted to kinetic energy, implying higher tangential velocity. Additionally, a longer string also increases the total surface area subjected to drag
 
 Modelling the Q factor graph in terms of an exponential, quadratic, sinusoidal, or power law function makes zero sense because intuitively, the Q factor should be 0 when the string length equals 0, and the Q factor should approach 0 when the string length approaches infinity. A function that seems to satisfy these constraints, used as the curve of best-fit for Figure \ref{fig:figure 8} is given by:
