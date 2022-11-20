@@ -33,7 +33,7 @@
 
 \begin{multicols}{2}
 \section{Introduction}
-{\color{blue}The purpose of this lab report is to evaluate the accuracy of various theoretical models used to predict the behaviour of a simple pendulum, namely the relationship between period and release angle, amplitude and time, period and length, and Q factor and length.}
+The purpose of this lab report is to evaluate the accuracy of various theoretical models used to predict the behaviour of a simple pendulum and their implications. Experiments demonstrate that there exists a relationship between period and release angle, amplitude and time, period and length, and Q factor and length. The following section presents all the theoretical background that these relationships are build on.
 
 \section{Background} \label{Background}
 A simple pendulum can be defined as a weight suspended via a flexible string, below a pivot point to which it swings back and forth freely along a plane that contains the pivot point. The length of the pendulum is defined as the distance from the pivot point to the weight's center of mass. The following equation is used to describe the simple pendulum released from an angle $\theta$, provided that the mass of the string is negligible compared to the mass of the weight:
@@ -109,7 +109,7 @@ And air resistance is assumed to be proportional to the pendulum's cross section
 \section{Period and Release Angle} \label{sec 3 period and release angle}
 
 \subsection{Experimental Setup}
-The initial setup for the pendulum was made by first taping a protractor on a desk. The weight was hanged by tying a piece of cotton string around a stainless steel quick link that was aligned to match the $90^{\circ}$ mark on the pendulum. Extra tape was also used to reinforce the pivot point, made to be collinear with the $0^{\circ}$ and $180^{\circ}$ markings. An image of the experimental setup is shown below:
+The initial setup for the pendulum was made by first taping a protractor on a desk. The weight was hanged by tying a piece of cotton string around a stainless steel quick link whose center of mass was aligned to the rope and the $90^{\circ}$ mark on the protractor. Extra tape was also used to reinforce the pivot point, made to be collinear with the $0^{\circ}$ and $180^{\circ}$ markings. An image of the experimental setup is shown below:
 
 \begin{figure}[H]
     \centering
@@ -196,7 +196,7 @@ The uncertainty for time was taken to be 1/30 since the video was captured at 30
 
 Although not plotted in the graph, the period is also needed for Q factor calculation. Using Tracker, period was measured by converting the number of frames taken for 5 swings into seconds, then dividing that value by 5. The uncertainty for period can then be reduced from 0.25\,s to 0.03\,s (same as time uncertainty) because Tracker allows the frame-by-frame playback and pausing of a video. For this specific setup, $T = (1.11 \pm 0.03)$\,s.
 
-\subsection{Analysis}
+\subsection{Analysis} \label{sec 4.3 analysis}
 The best-fit equation in Figure \ref{fig:figure 4} is modelled by Equation \ref{eq:amplitude-function} where:
 {
 \setlength{\abovedisplayskip}{2.5pt}
@@ -243,12 +243,12 @@ The data collected for the period vs. length graph is shown below:
 
 A tape measure was used to measure the pendulum's length. However, the uncertainty was taken to be double the smallest increment (0.05\,cm) of the tape measure since a double-ended measurement was used. The period measurement and its uncertainty was measured in the same was as Section \ref{sec 4.2 data}.
 
-\subsection{Analysis}
+\subsection{Analysis} \label{sec 5.3 analysis}
 The best-fit equation in Figure \ref{fig:figure 6} is modelled by modified version of Equation \ref{eq:l-over-g} where:
 {
 \setlength{\abovedisplayskip}{2.5pt}
 \begin{flalign*}
-    \qquad A &= 2.00 \pm 0.01 \approx 2\pi/\sqrt{g}& \\ % \\[-3pt] for paragraphs
+    \qquad A &\approx 2\pi/\sqrt{g} = 2.00 \pm 0.01 & \\ % \\[-3pt] for paragraphs
     % \qqquad &\phantom{{}={}} \text{ayo continuation br}\\
     \qquad n &= 0.483 \pm 0.004 &
 \end{flalign*}
@@ -276,7 +276,7 @@ The same setup from Section \ref{sec 4 Finding the Q Factor} and the same length
 
 
 \subsection{Data}
-THe data collected for Q factor vs length is shown below:
+The data collected for Q factor vs length is shown below:
 
 The Q factor for every length was calculated by using Equation \ref{eq:q-factor-formula} with generated values of $\tau$ and $T$ as demonstrated in Section \ref{sec 4 Finding the Q Factor} because the uncertainty is smaller in general. the Q factors for all 9 lengths is shown below with a line of best fit:
 
@@ -289,7 +289,7 @@ The Q factor for every length was calculated by using Equation \ref{eq:q-factor-
 
 Calculations for each length and its uncertainty was outlined in Section \ref{sec 5 period and length}. The Q factors and their uncertainties for each length was calculated by using Equation \ref{eq:q-factor-formula} instead of the counting method to reduce uncertainty.
 
-\subsection{Analysis}
+\subsection{Analysis} \label{sec 6.3 analysis}
 Unlike previous graphs, the Q factor seems to be a lot more erratic. This results in a best-fit line that doesn't fit nearly as perfect, as suggested by the somewhat low $r^2$ value, and residuals that are both large and inconsistent. However a general increasing-decreasing trend can be identified. Starting from with a pendulum length of 10\,cm, the Q factor increases until a maximum in between lengths of 25\,cm-30\,cm then decreases as length increases to 50\,cm. This phenomenon could be explained with Equation \ref{eq:propto v} and Equation \ref{eq:propto v2}.
 
 At any length, $F_p$ and $F_d$ are always acting on the pendulum. However, the way in which they increase differs as length increase. If $F_p = c_1v$ and $F_d = c_2Av^2$ and, these two curves are guaranteed to intersect for some pendulum length. Therefore, towards the left of the intersection point is where $F_p$ dominates, indicated by the increasing behaviour and towards the right of the intersection point is where $F_d$ dominates, indicated by the decreasing behaviour.
@@ -305,16 +305,18 @@ for $x > 0$ where:
 \begin{flalign*}
     \qquad A &= 49 \pm 3 & \\ % \\[-3pt] for paragraphs
     % \qqquad &\phantom{{}={}} \text{ayo continuation br}\\
-    \qquad B &= 0.037 \pm 0.001 & \\
+    \qquad B &= 0.037 \pm 0.001 &
 \end{flalign*}
 }
 
-which comes from the general shape of a critically damped oscillating system \cite{crit-damping}. Given that this curve contains a local maximum, the optimal pendulum length to maximize Q factor given the experimental setup in Figure \ref{fig:figure 3} is estimated to be around 27\,cm.
+which comes from the general shape of a critically damped oscillating system \cite{crit-damping}.
 
 Due to the use of intuition, it cannot be concluded that Equation \ref{eq:crit-damp} is the correct relationship between Q factor and length, but it serves as a decent model in explaining how Q factor definitely depends on pendulum length.
 
 \section{Conclusion}
-bruh i'll write this some other time
+In summary, several theoretical models were put to the test. Firstly Subsection \ref{sec 3.3 analysis} demonstrated that period is related to release angle and is symmetric for positive and negative release angles. Subsection \ref{sec 3.3 analysis} shoed that for small angles, the damped harmonic oscillator model provides a good exponential fit for amplitude vs. time data. This can be used to find the Q factor in 2 ways, using Equation \ref{eq:q-factor-formula} and counting, the former preferred since it carries a lower uncertainty. Subsection \ref{sec 5.3 analysis} demonstrated that Equation \ref{eq:l-over-g} provides square root relationship between period and length for small $\theta_0$, which is confirmed with a log-log plot. Finally, Subsection \ref{sec 6.3 analysis} shows that Q factor reaches a maximum of 487 when $L = 27\,\text{cm}$. The erratic measurements of Q factor results in a mediocre best-fit equation that was created based off intuition.
+
+The largest uncertainty is undoubtedly the maximum angles for amplitude due to the effect of camera skew on a double stringed contraption. This would in turn result in many possible amplitude-time graph fits that pass through all error bars, propagating this error into the $\tau$ value used to calculate the Q factor. To reduce this error, digital measurement tools that exceed the budget of a homemade pendulum may be used to effectively track the pendulum's center of mass.
 
 \newpage
 
