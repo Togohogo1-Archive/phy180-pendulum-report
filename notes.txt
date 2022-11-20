@@ -12,5 +12,7 @@ rounds of double checking
 - double check values on graph with written down
 - best-fit vs bestfit
 - $Q$
+- colon for figures
+- more detailed analysis for figures
 
 remove redundant definition for center of mass
