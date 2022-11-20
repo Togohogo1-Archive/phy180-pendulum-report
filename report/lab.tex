@@ -159,7 +159,7 @@ Given that the $r^2$ value is relatively close to 1, the residuals are both smal
 \section{Finding the Q Factor} \label{sec 4 Finding the Q Factor}
 
 \subsection{Experimental Setup}
-A single-stringed pendulum like the one presented in Section \ref{sec 3 period and release angle} tends to spin in an elliptical fashion when released, which violates the way a pendulum was defined in Section \ref{Background}. To correct for elliptical motion, a degree of freedom was removed from the pendulum by threading a string through the stainless steel quick link and fastening the threated string at 2 edge pivots to form the shape of a ``V''. This allows the pendulum to swing back and forth in the plane perpendicular to the ``V'' with the pivot point lying directly above the weight. Lego pieces clamped down on the string to prevent it from slipping, and a protractor was taped directly above the weight. Extra caution was taken to ensure that the protractor's center the edge pivots, and the camera lens were all aligned with each other. Shown below is a front view of the new setup:
+A single-stringed pendulum like the one presented in Section \ref{sec 3 period and release angle} tends to spin in an elliptical fashion when released, which violates the way a simple pendulum was defined in Section \ref{Background}. To correct for elliptical motion, a degree of freedom was removed from the pendulum by threading a string through the stainless steel quick link and fastening the threated string at 2 edge pivots to form the shape of a ``V''. This allows the pendulum to swing back and forth in the plane perpendicular to the ``V'' with the pivot point lying directly above the weight's center of mass. Lego pieces clamped down on the string to prevent it from slipping, and a protractor was taped directly above the weight, equidistant from the edge pivots. Extra caution was taken to ensure that the protractor's center, the edge pivots, and the camera lens were all aligned with each other. Shown below is a front view of the new setup:
 
 \begin{figure}[H]
     \centering
@@ -180,11 +180,11 @@ The Q factor can be determined by plotting
     \label{fig:figure 4}
 \end{figure}
 
-The weight was released from an angle of approximately $20^\circ$ to ensure that period stays constant as it is oscillationg (within small angle approximation). Initially, Figure \ref{fig:figure 4} was generated with a release angle of $60^\circ$, resulting the period to decrease with time due to frictional forces, producing an inaccurate Q factor.
+The weight was released from an angle of approximately $20^\circ$ (within small angle approximation) to ensure that period stays constant as it is oscillating.  Initially, Figure \ref{fig:figure 4} was generated with a release angle of $60^\circ$, resulting the period to decrease with time due to frictional forces, producing an inaccurate Q factor.
 
 To determine the amplitude at a given time, the full length of the video was divided into 15\,-\,20 equal intervals. For every interval, a few frames were moved forwards or backwards until the closest maximum amplitude was reached.
 
-The value for each amplitude was measured in Tracker \cite{tracker} at the frame where the angle reached a local maximum. When two strings appears in the frame due to camera skew, the angle was taken to be the midpoint of the region that the strings form. The uncertainty for angle was then taken to be half the total angle of the region. An image of angle calculation is shown below:
+The value for each amplitude was measured in Tracker \cite{tracker} at the frame where the angle reached a local maximum specifically on the left side. When two strings appears in the frame due to camera skew, the angle was taken to be the midpoint of the region that the strings form. The uncertainty for angle would then equal half the absoutely angle difference between the 2 strings. An image of angle calculation is shown below:
 
 \begin{figure}[H]
     \centering
@@ -195,7 +195,7 @@ The value for each amplitude was measured in Tracker \cite{tracker} at the frame
 
 The uncertainty for time was taken to be 1/30 since the video was captured at 30 frames per second.
 
-Although not plotted in the graph, the period is also needed for Q factor calculation. Using Tracker, period was measured by converting the number of frames taken for 5 swings into seconds, then dividing that value by 5. The uncertainty for period can then be reduced from 0.25\,s to 0.03\,s (same as time uncertainty) because Tracker allows the frame-by-frame playback and pausing of a video. For this specific setup, $T = (1.11 \pm 0.03)$\,s.
+Although not plotted in the graph, the period was also needed for Q factor calculation. Using Tracker, period was measured by converting the number of frames taken for 5 swings into seconds, then dividing that value by 5. The uncertainty for period can then be reduced from 0.25\,s to 0.03\,s (same as time uncertainty) because Tracker allows the frame-by-frame playback and pausing of a video. For the specific setup described in this section, $T = (1.11 \pm 0.03)$\,s.
 
 \subsection{Analysis} \label{sec 4.3 analysis}
 The best-fit equation in Figure \ref{fig:figure 4} is modelled by Equation \ref{eq:amplitude-function} where:
@@ -207,19 +207,15 @@ The best-fit equation in Figure \ref{fig:figure 4} is modelled by Equation \ref{
 \end{flalign*}
 }
 
-Following a similar analysis to that of Section \ref{sec 3.3 analysis}, the calculated value for $\theta_0$ falls within the range of the measured value for $\theta_0$. Additionally, the very high $r^2$ value combined with small and consistent residuals suggests that damped harmonic motion, the model used in Equation \ref{eq:amplitude-function}, provides a good fit for the data.
+Following a similar analysis to that of Section \ref{sec 3.3 analysis}, the calculated value for $\theta_0$ falls within the range of the measured value for $\theta_0$. Additionally, the very high $r^2$ value combined with small and consistent residuals suggests that damped harmonic motion (Equation \ref{eq:amplitude-function}), provides a good fit for the data.
 
-Given Equation \ref{eq:q-factor-formula} and a  value for $T$ and $\tau$ with their uncertainties, the $Q$ factor is calculated to be $480 \pm 14$, with its uncertainty taking on the higher percent uncertainty of $T$ and $\tau$.
+Given Equation \ref{eq:q-factor-formula} and a value for $T$ and $\tau$ with their uncertainties, the Q factor is calculated to be $480 \pm 14$, with its uncertainty taking on the higher percent uncertainty of $T$ and $\tau$.
 
 Another way of determining the Q factor is by counting the number of oscillations as outlined in Section \ref{Background}.
 
-Let $\theta_Q$ represent the amplitude at which the initial release angle decays to $e^{-\pi}\theta_0$. When $A(x) = \theta_Q$, $t_Q = 534\,\text{s}$ seconds have elapsed, meaning $A(t_Q) = \theta_Q$. However, $\theta_Q$ carries an uncertainty of 0.009\,rad (Subsection \ref{sec 3.2 Data}), meaning $t_Q$ is bounded. When $A(x) = \theta_Q + 0.009$, $t_Q = 465\,\text{s}$ and when $A(x) = \theta_Q - 0.009$, $t_Q = 651\,\text{s}$. The uncertainty for $t_Q$ can be taken to be the larger difference from both bounds. This, the uncertainty for Q factor by counting oscillations is found by taking the larger uncertainty between $t_Q$ and $T$, resulting in $Q = 480 \pm 90$.
+Let $\theta_Q$ represent the amplitude at which the initial release angle decays to $e^{-\pi}\theta_0$. When $A(x) = \theta_Q$, $t_Q = 534$ seconds have elapsed, meaning $A(t_Q) = \theta_Q$. However, $\theta_Q$ carries an uncertainty of 0.009\,rad (Subsection \ref{sec 3.2 Data}), meaning $t_Q$ is bounded. When $A(x) = \theta_Q + 0.009$, $t = 465\,\text{s}$ and when $A(x) = \theta_Q - 0.009$, $t = 651\,\text{s}$. The uncertainty for $t_Q$ is taken to be the larger absolute difference of $t_Q$ from both bounds. Thus, the uncertainty for Q factor by counting oscillations is found by taking the larger percent uncertainty between $t_Q$ and $T$, resulting in $Q = 480 \pm 90$.
 
-Although both methods yield the same value for Q factor, the counting method is not preferred due to the large uncertainty. The reason for this large uncertainty is attributed to the small rate of change of the exponential function $A(x)$ large values of $t$.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Lab 2 content
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Although both methods yield the same value for Q factor, the counting method is not preferred due to its large uncertainty. The reason for this large uncertainty is attributed to the small rate of change of the exponential function $A(x)$ for large values of $t$.
 
 \section{Period and Length} \label{sec 5 period and length}
 

@@ -11,5 +11,6 @@ rounds of double checking
 - capitalization for stuff after equations
 - double check values on graph with written down
 - best-fit vs bestfit
+- $Q$
 
 remove redundant definition for center of mass
